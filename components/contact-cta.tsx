@@ -1,37 +1,49 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { contentImage } from "@/lib/content-images";
 
 export function ContactCta({
   eyebrow = "Een aanvraag doen",
   title = "Vertel wat je organiseert. Dan kijkt Dashing Blends gericht met je mee.",
   body = "Vermeld de datum, locatie, het aantal gasten en de dienst waar je interesse in hebt. Zo kan Duane snel en concreet reageren.",
+  image,
 }: {
   eyebrow?: string;
   title?: string;
   body?: string;
+  image?: string;
 }) {
+  const ctaImage = image ?? contentImage(8, "/hero/cocktails-02.png");
+
   return (
-    <section className="section-shell py-24 sm:py-32">
-      <div className="subtle-panel fade-up grid overflow-hidden border border-border lg:grid-cols-[1fr_0.45fr]">
-        <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+    <section className="section-shell py-20 sm:py-24 lg:py-28">
+      <div className="cta-card grid overflow-hidden border border-border lg:grid-cols-[1.04fr_0.96fr]">
+        <div className="relative z-10 flex flex-col justify-center p-7 sm:p-10 lg:p-14 xl:p-16">
           <div className="flex items-center gap-4">
-            <span className="h-px w-12 bg-secondary/70" />
+            <span className="h-px w-10 bg-secondary/70 sm:w-12" />
             <span className="eyebrow-copy text-secondary">{eyebrow}</span>
           </div>
-          <h2 className="display-copy mt-7 max-w-5xl text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">{title}</h2>
-          <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">{body}</p>
-          <Button asChild size="lg" className="mt-9 uppercase tracking-[0.1em]">
+          <h2 className="display-copy mt-6 max-w-4xl text-4xl leading-[0.98] sm:text-5xl xl:text-6xl">{title}</h2>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">{body}</p>
+          <Button asChild size="lg" className="mt-8 w-fit uppercase tracking-[0.1em]">
             <Link href="/contact">
               Naar contact
               <ArrowRight data-icon="inline-end" />
             </Link>
           </Button>
         </div>
-        <div className="relative min-h-64 border-t border-border lg:border-l lg:border-t-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,oklch(0.43_0.07_310_/_0.24),transparent_52%),linear-gradient(135deg,transparent,oklch(0.72_0.07_78_/_0.08))]" />
-          <div className="absolute inset-8 border border-secondary/15" />
+
+        <div className="cta-media min-h-[320px] sm:min-h-[420px] lg:min-h-full">
+          <Image
+            src={ctaImage}
+            alt="Cocktails en barservice van Dashing Blends"
+            fill
+            sizes="(min-width: 1024px) 42vw, 100vw"
+            className="object-cover object-center"
+          />
         </div>
       </div>
     </section>
