@@ -22,4 +22,4 @@ npm run typecheck
 
 ## Content en media
 
-De huidige versie gebruikt de publieke teksten en propositie van de bestaande site als basis. Beeldmateriaal is bewust als branded visual placeholders opgebouwd, zodat echte eventfoto's later veilig via componentprops of CMS-data kunnen worden aangesloten zonder layoutwijzigingen.
+De huidige versie gebruikt de publieke teksten, propositie en het bestaande Dashing Blends-logo als basis. Beeldmateriaal is bewust als branded visual placeholders opgebouwd, zodat echte eventfoto's later veilig via componentprops of CMS-data kunnen worden aangesloten zonder layoutwijzigingen.

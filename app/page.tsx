@@ -112,7 +112,7 @@ function BrandVisual() {
   return (
     <div className="bar-visual" aria-label="Sfeervisual van een mobiele cocktailbar met citrus-accenten">
       <div className="absolute left-6 top-6 flex items-center gap-3 rounded-md border border-border bg-background/70 px-4 py-3 backdrop-blur sm:left-8 sm:top-8">
-        <Image src="/dashing-blends-mark.svg" width={40} height={40} alt="" aria-hidden />
+        <Image src="/logodashingblends.webp" width={40} height={40} alt="" aria-hidden />
         <div className="leading-tight">
           <p className="text-sm font-bold">Dashing Blends</p>
           <p className="text-xs text-muted-foreground">Cocktails & hospitality</p>
@@ -155,7 +155,7 @@ export default function Home() {
       <header className="sticky top-0 z-40 border-b border-border bg-background/82 backdrop-blur-xl">
         <div className="section-shell flex min-h-20 items-center justify-between gap-5">
           <a href="#" className="flex items-center gap-3" aria-label="Dashing Blends home">
-            <Image src="/dashing-blends-mark.svg" width={44} height={44} alt="" aria-hidden priority />
+            <Image src="/logodashingblends.webp" width={44} height={44} alt="" aria-hidden priority />
             <div className="leading-tight">
               <p className="text-sm font-black uppercase tracking-normal">Dashing Blends</p>
               <p className="text-xs text-muted-foreground">Venlo · op locatie</p>
@@ -420,7 +420,7 @@ export default function Home() {
       <footer className="border-t border-border py-10">
         <div className="section-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <Image src="/dashing-blends-mark.svg" width={40} height={40} alt="" aria-hidden />
+            <Image src="/logodashingblends.webp" width={40} height={40} alt="" aria-hidden />
             <div>
               <p className="font-bold">Dashing Blends</p>
               <p className="text-sm text-muted-foreground">Cocktails, hospitality en beleving</p>
