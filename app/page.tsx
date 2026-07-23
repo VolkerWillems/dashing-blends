@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Check, GlassWater, Handshake, PartyPopper } from "lucide-react";
 
 import { ContactCta } from "@/components/contact-cta";
+import { ParallaxDivider } from "@/components/parallax-divider";
 import { Button } from "@/components/ui/button";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -115,8 +116,8 @@ export default function Home() {
 
         <figure className="hero-visual fade-up">
           <Image
-            src="/duane-03.webp"
-            alt="Duane van Dashing Blends bereidt een cocktail achter de bar"
+            src="/hero/mixing-01.png"
+            alt="Cocktail in bereiding in een stijlvolle donkere barsetting"
             fill
             priority
             sizes="(min-width: 1024px) 54vw, 100vw"
@@ -150,6 +151,14 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <ParallaxDivider
+        image="/parallax/parallax-01.jpg"
+        alt="Donkere cocktailbar met sfeervolle verlichting"
+        eyebrow="Cocktails met aandacht"
+        title="Een verzorgde barervaring begint lang voordat het eerste glas wordt geserveerd."
+        imagePosition="object-center"
+      />
 
       <section id="diensten" className="section-shell py-24 sm:py-32">
         <div className="fade-up grid gap-10 xl:grid-cols-[1fr_0.55fr] xl:items-end">
@@ -209,6 +218,14 @@ export default function Home() {
           })}
         </div>
       </section>
+
+      <ParallaxDivider
+        image="/parallax/parallax-02.jpg"
+        alt="Cocktailglazen in een warme avondsetting"
+        eyebrow="Op locatie"
+        title="De uitstraling van de bar sluit aan op de gelegenheid, zonder de avond over te nemen."
+        imagePosition="object-center"
+      />
 
       <section className="soft-section border-y border-border/70 py-24 sm:py-32">
         <div className="section-shell grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
@@ -273,6 +290,14 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <ParallaxDivider
+        image="/parallax/parallax-03.jpg"
+        alt="Sfeervol glaswerk en cocktaildetails"
+        eyebrow="Dashing Blends"
+        title="Duidelijke voorbereiding, rustige uitvoering en aandacht voor iedere gast."
+        imagePosition="object-center"
+      />
 
       <ContactCta />
       <SiteFooter />
