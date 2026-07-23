@@ -1,0 +1,7 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dashing Blends beeldmerk">
+  <rect x="8" y="8" width="80" height="80" rx="10" fill="#15100E"/>
+  <path d="M29 27h17c13 0 23 8 23 21s-10 21-23 21H29V27Z" fill="#F5E7D1"/>
+  <path d="M41 38h6c6 0 10 4 10 10s-4 10-10 10h-6V38Z" fill="#15100E"/>
+  <path d="M67 24l5 4-17 20-5-4 17-20Z" fill="#B8FF62"/>
+  <path d="M28 72h41" stroke="#E8553F" stroke-width="5" stroke-linecap="round"/>
+</svg>
