@@ -21,8 +21,9 @@ export default function AboutPage() {
         eyebrow="Over Dashing Blends"
         title="Gastvrijheid met aandacht voor het moment."
         introduction="Dashing Blends is het bedrijf van Duane Chia. Vanuit Venlo verzorgt hij cocktailworkshops, mobiele barservice en horecaondersteuning voor particuliere en zakelijke opdrachtgevers."
-        image="/duane-04.webp"
-        imageAlt="Duane van Dashing Blends met een dienblad cocktails"
+        image="/hero/cocktail-01.png"
+        imageAlt="Verzorgde cocktail in een stijlvolle donkere setting"
+        imagePosition="object-center"
       />
 
       <section className="soft-section border-y border-border/70 py-24 sm:py-32">
