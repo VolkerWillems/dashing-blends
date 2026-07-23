@@ -37,8 +37,9 @@ export default function MobileCocktailBarPage() {
         eyebrow="Mobiele cocktailbar"
         title="Een professionele barervaring op jouw locatie."
         introduction="Dashing Blends verzorgt cocktails en gastvrijheid op locatie. Van bartender en materialen tot een complete mobiele bar, afgestemd op het type evenement en de gasten."
-        image="/duane-03.webp"
-        imageAlt="Duane schenkt een cocktail achter de bar"
+        image="/hero/shakers-01.png"
+        imageAlt="Cocktailshakers en barbenodigdheden in een donkere barsetting"
+        imagePosition="object-center"
       />
 
       <section className="soft-section border-y border-border/70 py-24 sm:py-32">
