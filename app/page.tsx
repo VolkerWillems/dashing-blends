@@ -4,88 +4,72 @@ import { ArrowRight, Check, GlassWater, Handshake, PartyPopper } from "lucide-re
 
 import { ContactCta } from "@/components/contact-cta";
 import { ParallaxDivider } from "@/components/parallax-divider";
-import { Button } from "@/components/ui/button";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { Button } from "@/components/ui/button";
+import { contentImage } from "@/lib/content-images";
 
 const services = [
   {
     title: "Cocktailworkshops",
     eyebrow: "Zelf shaken en proeven",
     description:
-      "Interactieve workshops op locatie voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen. Met cocktails, mocktails en persoonlijke begeleiding.",
+      "Interactieve workshops op locatie voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen.",
     href: "/cocktailworkshops",
-    image: "/duane-02.webp",
-    imagePosition: "object-[50%_22%]",
+    image: contentImage(1, "/hero/mixing-02.png"),
     icon: GlassWater,
-    points: ["Professionele materialen", "Praktische uitleg", "Afgestemd op de groep"],
+    points: ["Cocktails en mocktails", "Professionele materialen", "Persoonlijke begeleiding"],
   },
   {
     title: "Mobiele cocktailbar",
     eyebrow: "Barservice op locatie",
     description:
-      "Een bartender, cocktailmaterialen en desgewenst een mobiele bar voor bruiloften, bedrijfsfeesten, privéfeesten en evenementen.",
+      "Een bartender, cocktailmaterialen en desgewenst een mobiele bar voor bruiloften, bedrijfsfeesten en evenementen.",
     href: "/mobiele-cocktailbar",
-    image: "/duane-03.webp",
-    imagePosition: "object-center",
+    image: contentImage(2, "/hero/shakers-01.png"),
     icon: PartyPopper,
-    points: ["Cocktailkaart op maat", "Cocktails en mocktails", "Professioneel gastcontact"],
+    points: ["Cocktailkaart op maat", "Volledige barservice", "Verzorgde presentatie"],
   },
   {
     title: "Horeca support",
     eyebrow: "Flexibele versterking",
     description:
-      "Ervaren ondersteuning achter de bar, in de bediening en tijdens piekmomenten voor horecabedrijven en eventteams.",
+      "Ervaren ondersteuning achter de bar, in de bediening en tijdens piekmomenten voor horeca- en eventteams.",
     href: "/horeca-support",
-    image: "/duane-01.webp",
-    imagePosition: "object-[68%_center]",
+    image: contentImage(3, "/hero/mix-01.png"),
     icon: Handshake,
-    points: ["Bar en bediening", "Snel inzetbaar", "Particulier en zakelijk"],
+    points: ["Bar en bediening", "Praktisch inzetbaar", "Professioneel gastcontact"],
   },
 ];
 
 const process = [
-  {
-    title: "Aanvraag",
-    body: "De datum, locatie, groepsgrootte en gewenste dienst vormen het vertrekpunt.",
-  },
-  {
-    title: "Afstemming",
-    body: "Dashing Blends bespreekt de invulling, praktische voorzieningen en eventuele cocktailvoorkeuren.",
-  },
-  {
-    title: "Voorbereiding",
-    body: "Materialen, planning en werkzaamheden worden vooraf helder afgestemd.",
-  },
-  {
-    title: "Op locatie",
-    body: "Duane verzorgt de afgesproken workshop, barservice of horecaondersteuning.",
-  },
+  ["01", "Aanvraag", "Datum, locatie, groepsgrootte en gewenste dienst."],
+  ["02", "Afstemming", "Invulling, voorzieningen en cocktailvoorkeuren."],
+  ["03", "Voorbereiding", "Materialen, planning en werkzaamheden worden geregeld."],
+  ["04", "Op locatie", "Duane verzorgt de afgesproken uitvoering."],
 ];
 
-const occasions = ["Bedrijfsuitjes", "Bruiloften", "Privéfeesten", "Vrijgezellenfeesten", "Evenementen", "Horecateams"];
-
 export default function Home() {
+  const heroImage = contentImage(0, "/hero/mixing-01.png");
+  const editorialImage = contentImage(4, "/duane-04.webp");
+  const ctaImage = contentImage(5, "/hero/cocktails-02.png");
+
   return (
     <main className="overflow-hidden">
       <SiteHeader />
 
-      <section className="section-shell grid min-h-[calc(100dvh-80px)] items-center gap-12 py-14 lg:grid-cols-[0.84fr_1.16fr] lg:py-20">
-        <div className="fade-up flex flex-col gap-9 lg:pr-8">
+      <section className="section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-20">
+        <div className="fade-up flex flex-col gap-7 lg:pr-4">
           <div className="flex items-center gap-4">
-            <span className="h-px w-12 bg-secondary/70" />
+            <span className="h-px w-10 bg-secondary/70 sm:w-12" />
             <span className="eyebrow-copy text-secondary">Cocktails & hospitality · Venlo</span>
           </div>
-
-          <div className="flex flex-col gap-7">
-            <h1 className="display-copy text-6xl leading-[0.84] text-foreground sm:text-7xl xl:text-[7.6rem] 2xl:text-[8.4rem]">
-              Cocktails en hospitality op locatie.
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
-              Dashing Blends verzorgt cocktailworkshops, een mobiele cocktailbar en flexibele horecaondersteuning voor particuliere en zakelijke gelegenheden in Venlo en omgeving.
-            </p>
-          </div>
-
+          <h1 className="display-copy max-w-4xl text-[clamp(3.5rem,7.2vw,8rem)] leading-[0.9] text-foreground">
+            Cocktails met karakter. Service met aandacht.
+          </h1>
+          <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 xl:text-xl">
+            Dashing Blends verzorgt cocktailworkshops, een mobiele cocktailbar en flexibele horecaondersteuning voor particuliere en zakelijke gelegenheden in Venlo en omgeving.
+          </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="uppercase tracking-[0.1em]">
               <Link href="/contact">
@@ -97,121 +81,86 @@ export default function Home() {
               <Link href="#diensten">Bekijk de diensten</Link>
             </Button>
           </div>
-
-          <dl className="grid grid-cols-3 gap-4 border-y border-border/70 py-6">
+          <div className="grid grid-cols-3 gap-3 border-y border-border/70 py-5 sm:gap-6">
             <div>
-              <dt className="eyebrow-copy text-muted-foreground">Basis</dt>
-              <dd className="display-copy mt-2 text-2xl text-secondary">Venlo</dd>
+              <p className="eyebrow-copy text-muted-foreground">Basis</p>
+              <p className="mt-2 text-sm font-semibold text-foreground sm:text-base">Venlo</p>
             </div>
             <div>
-              <dt className="eyebrow-copy text-muted-foreground">Werkgebied</dt>
-              <dd className="display-copy mt-2 text-2xl text-secondary">Op locatie</dd>
+              <p className="eyebrow-copy text-muted-foreground">Werkgebied</p>
+              <p className="mt-2 text-sm font-semibold text-foreground sm:text-base">Op locatie</p>
             </div>
             <div>
-              <dt className="eyebrow-copy text-muted-foreground">Contact</dt>
-              <dd className="display-copy mt-2 text-2xl text-secondary">Persoonlijk</dd>
+              <p className="eyebrow-copy text-muted-foreground">Aanpak</p>
+              <p className="mt-2 text-sm font-semibold text-foreground sm:text-base">Persoonlijk</p>
             </div>
-          </dl>
+          </div>
         </div>
 
-        <figure className="hero-visual fade-up">
+        <figure className="hero-visual fade-up min-h-[480px] sm:min-h-[620px] lg:min-h-[76dvh]">
           <Image
-            src="/hero/mixing-01.png"
-            alt="Cocktail in bereiding in een stijlvolle donkere barsetting"
+            src={heroImage}
+            alt="Cocktail in bereiding in een stijlvolle barsetting"
             fill
             priority
-            sizes="(min-width: 1024px) 54vw, 100vw"
+            sizes="(min-width: 1024px) 52vw, 100vw"
             className="object-cover object-center"
           />
-          <div className="editorial-overlay" />
-          <figcaption className="absolute inset-x-8 bottom-8 z-10 sm:inset-x-10 sm:bottom-10">
-            <div className="gold-rule mb-6 h-px" />
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="eyebrow-copy text-secondary">Dashing Blends</p>
-                <p className="display-copy mt-2 max-w-xl text-4xl leading-none sm:text-5xl">
-                  Cocktails, workshops en professionele service.
-                </p>
-              </div>
-              <p className="max-w-xs text-sm leading-7 text-muted-foreground">
-                Persoonlijke uitvoering door Duane, afgestemd op jouw locatie en gelegenheid.
-              </p>
-            </div>
+          <figcaption className="absolute inset-x-6 bottom-6 z-10 sm:inset-x-10 sm:bottom-10">
+            <p className="eyebrow-copy text-secondary">Dashing Blends</p>
+            <p className="display-copy mt-3 max-w-2xl text-3xl leading-[0.98] sm:text-5xl">
+              Een stijlvolle barervaring die past bij het moment.
+            </p>
           </figcaption>
         </figure>
       </section>
 
-      <section className="border-y border-border/70 bg-card/25 py-5">
-        <div className="section-shell flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-          {occasions.map((occasion, index) => (
-            <div key={occasion} className="flex items-center gap-8">
-              <span className="eyebrow-copy text-muted-foreground">{occasion}</span>
-              {index < occasions.length - 1 ? <span className="hidden size-1 rounded-full bg-secondary/60 md:block" /> : null}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <ParallaxDivider
-        image="/parallax/parallax-01.jpg"
-        alt="Donkere cocktailbar met sfeervolle verlichting"
-        eyebrow="Cocktails met aandacht"
-        title="Een verzorgde barervaring begint lang voordat het eerste glas wordt geserveerd."
-        imagePosition="object-center"
-      />
-
-      <section id="diensten" className="section-shell py-24 sm:py-32">
-        <div className="fade-up grid gap-10 xl:grid-cols-[1fr_0.55fr] xl:items-end">
+      <section id="diensten" className="section-shell py-20 sm:py-24 lg:py-28">
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.62fr] lg:items-end">
           <div>
-            <div className="flex items-center gap-4">
-              <span className="h-px w-12 bg-secondary/70" />
-              <span className="eyebrow-copy text-secondary">Diensten</span>
-            </div>
-            <h2 className="display-copy mt-7 max-w-5xl text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
-              Drie manieren om Dashing Blends in te zetten.
+            <p className="eyebrow-copy text-secondary">Diensten</p>
+            <h2 className="display-copy mt-5 max-w-5xl text-4xl leading-[0.98] sm:text-6xl xl:text-7xl">
+              Eén vertrouwd gezicht voor cocktails en hospitality.
             </h2>
           </div>
-          <p className="max-w-xl text-base leading-8 text-muted-foreground xl:justify-self-end">
-            Iedere opdracht begint met duidelijke informatie over datum, locatie, groep en gewenste invulling. Van daaruit wordt bepaald wat praktisch en passend is.
+          <p className="max-w-xl text-base leading-7 text-muted-foreground sm:leading-8 lg:justify-self-end">
+            Iedere opdracht wordt afgestemd op de gelegenheid, locatie en groep. Geen standaardpakket dat overal overheen wordt gegooid, want daar wordt niemand vrolijk van.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 xl:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:mt-16 xl:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <article key={service.title} className="service-card subtle-panel fade-up overflow-hidden border border-border transition duration-500 hover:-translate-y-1 hover:border-secondary/35">
-                <div className="relative aspect-[4/3] overflow-hidden border-b border-border/70">
+              <article key={service.title} className="service-card overflow-hidden border border-border bg-card/55">
+                <div className="relative aspect-[16/11] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={`${service.title} door Dashing Blends`}
                     fill
                     sizes="(min-width: 1280px) 28vw, (min-width: 768px) 50vw, 100vw"
-                    className={`object-cover grayscale-[12%] transition duration-700 hover:scale-[1.035] hover:grayscale-0 ${service.imagePosition}`}
+                    className="object-cover object-center transition duration-700 hover:scale-[1.025]"
                   />
-                  <div className="editorial-overlay" />
-                  <div className="absolute bottom-5 left-5 z-10 flex size-12 items-center justify-center border border-secondary/35 bg-background/80 text-secondary backdrop-blur">
-                    <Icon aria-hidden />
+                  <div className="absolute bottom-5 left-5 z-10 flex size-11 items-center justify-center border border-secondary/30 bg-background/80 text-secondary backdrop-blur-sm">
+                    <Icon className="size-5" aria-hidden />
                   </div>
                 </div>
-                <div className="relative z-10 p-7 sm:p-8">
+                <div className="p-7 sm:p-8">
                   <p className="eyebrow-copy text-secondary">{service.eyebrow}</p>
-                  <h3 className="display-copy mt-4 text-4xl leading-none">{service.title}</h3>
-                  <p className="mt-6 text-sm leading-7 text-muted-foreground sm:text-base">{service.description}</p>
-                  <ul className="mt-7 grid gap-3">
+                  <h3 className="display-copy mt-4 text-3xl leading-none sm:text-4xl">{service.title}</h3>
+                  <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">{service.description}</p>
+                  <ul className="mt-6 grid gap-3 border-t border-border/70 pt-6">
                     {service.points.map((point) => (
                       <li key={point} className="flex items-center gap-3 text-sm">
-                        <Check className="size-4 text-secondary" aria-hidden />
+                        <Check className="size-4 shrink-0 text-secondary" aria-hidden />
                         {point}
                       </li>
                     ))}
                   </ul>
-                  <Button asChild variant="link" className="mt-8 text-secondary">
-                    <Link href={service.href}>
-                      Meer informatie
-                      <ArrowRight data-icon="inline-end" />
-                    </Link>
-                  </Button>
+                  <Link href={service.href} className="card-link mt-7">
+                    Meer informatie
+                    <ArrowRight className="size-4" aria-hidden />
+                  </Link>
                 </div>
               </article>
             );
@@ -220,86 +169,69 @@ export default function Home() {
       </section>
 
       <ParallaxDivider
-        image="/parallax/parallax-02.jpg"
-        alt="Cocktailglazen in een warme avondsetting"
+        image="/parallax/parallax-01.jpg"
+        alt="Donkere cocktailbar met sfeervolle verlichting"
         eyebrow="Op locatie"
-        title="De uitstraling van de bar sluit aan op de gelegenheid, zonder de avond over te nemen."
-        imagePosition="object-center"
+        title="Een verzorgde barervaring begint ruim voordat het eerste glas wordt geserveerd."
+        imagePosition="center"
       />
 
-      <section className="soft-section border-y border-border/70 py-24 sm:py-32">
-        <div className="section-shell grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div className="grid grid-cols-[0.72fr_1fr] gap-5">
-            <div className="image-frame fade-up min-h-[520px] translate-y-10">
-              <Image
-                src="/duane-02.webp"
-                alt="Duane tijdens een cocktailworkshop"
-                fill
-                sizes="(min-width: 1024px) 32vw, 45vw"
-                className="object-cover object-[50%_20%]"
-              />
-              <div className="editorial-overlay" />
-            </div>
-            <div className="image-frame fade-up min-h-[620px]">
-              <Image
-                src="/duane-04.webp"
-                alt="Duane met een dienblad cocktails"
-                fill
-                sizes="(min-width: 1024px) 38vw, 55vw"
-                className="object-cover object-center"
-              />
-              <div className="editorial-overlay" />
-            </div>
+      <section className="section-shell grid gap-10 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:py-28">
+        <div className="image-frame min-h-[460px] sm:min-h-[620px]">
+          <Image
+            src={editorialImage}
+            alt="Duane van Dashing Blends tijdens een opdracht"
+            fill
+            sizes="(min-width: 1024px) 52vw, 100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div>
+          <p className="eyebrow-copy text-secondary">Over Duane</p>
+          <h2 className="display-copy mt-5 text-4xl leading-[0.98] sm:text-6xl xl:text-7xl">
+            Vakmanschap achter de bar. Rust in de uitvoering.
+          </h2>
+          <div className="mt-6 space-y-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+            <p>
+              Dashing Blends is het bedrijf van Duane Chia. Zijn ervaring in horecaondernemerschap en hospitality zie je terug in de voorbereiding, presentatie en omgang met gasten.
+            </p>
+            <p>
+              De aanpak is praktisch en persoonlijk: vooraf helder afstemmen, op locatie flexibel handelen en kwaliteit leveren zonder onnodige drukte eromheen.
+            </p>
           </div>
-
-          <div className="fade-up lg:pl-10">
-            <p className="eyebrow-copy text-secondary">Over Duane</p>
-            <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
-              Ervaring in cocktails, horeca en gastcontact.
-            </h2>
-            <div className="mt-7 space-y-5 text-base leading-8 text-muted-foreground sm:text-lg">
-              <p>
-                Dashing Blends is het bedrijf van Duane Chia. Vanuit zijn achtergrond in horecaondernemerschap en hospitality verzorgt hij opdrachten waarbij vakmanschap en persoonlijke service samenkomen.
-              </p>
-              <p>
-                De aanpak is praktisch: vooraf goed afstemmen, op locatie flexibel handelen en gasten op een natuurlijke manier aandacht geven.
-              </p>
-            </div>
-            <Button asChild variant="outline" size="lg" className="mt-9 uppercase tracking-[0.1em]">
-              <Link href="/over">Meer over Dashing Blends</Link>
-            </Button>
-          </div>
+          <Button asChild variant="outline" size="lg" className="mt-8 uppercase tracking-[0.1em]">
+            <Link href="/over">Meer over Dashing Blends</Link>
+          </Button>
         </div>
       </section>
 
-      <section className="section-shell py-24 sm:py-32">
-        <div className="fade-up max-w-4xl">
+      <section className="process-section border-y border-border/70 py-20 sm:py-24 lg:py-28">
+        <div className="section-shell">
           <p className="eyebrow-copy text-secondary">Werkwijze</p>
-          <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
-            Van aanvraag naar uitvoering.
+          <h2 className="display-copy mt-5 max-w-4xl text-4xl leading-[0.98] sm:text-6xl xl:text-7xl">
+            Duidelijk van aanvraag tot uitvoering.
           </h2>
-        </div>
-        <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 xl:grid-cols-4">
-          {process.map((step, index) => (
-            <article key={step.title} className="fade-up bg-card p-7 sm:p-9">
-              <p className="display-copy text-5xl text-primary/50">0{index + 1}</p>
-              <div className="gold-rule my-7 h-px" />
-              <h3 className="display-copy text-4xl">{step.title}</h3>
-              <p className="mt-5 text-sm leading-7 text-muted-foreground">{step.body}</p>
-            </article>
-          ))}
+          <div className="mt-12 grid border-l border-t border-border/70 sm:grid-cols-2 xl:grid-cols-4">
+            {process.map(([number, title, body]) => (
+              <article key={number} className="border-b border-r border-border/70 p-6 sm:p-8 lg:p-9">
+                <p className="text-xs font-semibold tracking-[0.18em] text-secondary">{number}</p>
+                <h3 className="display-copy mt-8 text-3xl sm:text-4xl">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">{body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <ParallaxDivider
-        image="/parallax/parallax-03.jpg"
-        alt="Sfeervol glaswerk en cocktaildetails"
+        image="/parallax/parallax-02.jpg"
+        alt="Cocktailglazen in een warme avondsetting"
         eyebrow="Dashing Blends"
-        title="Duidelijke voorbereiding, rustige uitvoering en aandacht voor iedere gast."
-        imagePosition="object-center"
+        title="De uitstraling ondersteunt de gelegenheid, zonder de avond over te nemen."
+        imagePosition="center"
       />
 
-      <ContactCta />
+      <ContactCta image={ctaImage} />
       <SiteFooter />
     </main>
   );
