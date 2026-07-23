@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 const navItems = [
   { label: "Diensten", href: "#diensten" },
   { label: "Werkwijze", href: "#werkwijze" },
-  { label: "Over", href: "#over" },
+  { label: "Over Duane", href: "#over" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -29,25 +29,31 @@ const services = [
     title: "Cocktailworkshops",
     eyebrow: "Samen shaken",
     description:
-      "Een interactieve workshop voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen. Leren, proeven en vooral samen iets beleven.",
+      "Een interactieve workshop voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen. Geen droge demonstratie, maar zelf maken, proeven en beleven.",
     icon: GlassWater,
-    points: ["Professionele technieken", "Cocktails en mocktails", "Geschikt voor kleine groepen"],
+    image: "/duane-02.webp",
+    imagePosition: "object-[50%_28%]",
+    points: ["Professionele technieken", "Cocktails en mocktails", "Persoonlijke begeleiding"],
   },
   {
     title: "Mobiele cocktailbar",
     eyebrow: "Bar op locatie",
     description:
-      "Een complete cocktailervaring voor bruiloften, bedrijfsfeesten, festivals en prive-events, afgestemd op sfeer, locatie en gasten.",
+      "Een complete cocktailervaring voor bruiloften, bedrijfsfeesten, festivals en privé-events, afgestemd op de sfeer, locatie en gasten.",
     icon: PartyPopper,
+    image: "/duane-01.webp",
+    imagePosition: "object-[66%_center]",
     points: ["Bartender op locatie", "Cocktailmaterialen", "Optioneel met mobiele bar"],
   },
   {
     title: "Horeca support",
     eyebrow: "Flexibele versterking",
     description:
-      "Extra capaciteit voor bars, bediening en eventteams. Snel inzetbaar, representatief en gewend om direct mee te draaien.",
+      "Extra capaciteit voor bars, bediening en eventteams. Representatief, ervaren en gewend om zonder eindeloze briefing direct mee te draaien.",
     icon: Handshake,
-    points: ["Bar en bediening", "Events en horeca", "Rust in piekmomenten"],
+    image: "/duane-03.webp",
+    imagePosition: "object-center",
+    points: ["Bar en bediening", "Events en horeca", "Rust tijdens piekmomenten"],
   },
 ];
 
@@ -63,19 +69,19 @@ const moments = [
 const process = [
   {
     title: "Kennismaken",
-    description: "We bespreken datum, locatie, groep, sfeer en wat je gasten moeten ervaren.",
+    description: "We bespreken datum, locatie, groep, sfeer en wat je gasten aan het einde van de avond moeten onthouden.",
   },
   {
-    title: "Concept kiezen",
-    description: "Workshop, mobiele bar, support of een mix daarvan. Altijd passend bij jouw setting.",
+    title: "Concept bepalen",
+    description: "Workshop, mobiele bar, support of een combinatie. Geen standaardpakket dat toevallig in jouw agenda past.",
   },
   {
-    title: "Voorbereiden",
-    description: "Heldere afspraken over materialen, timing, cocktailkaart en praktische details.",
+    title: "Tot in detail",
+    description: "Heldere afspraken over materialen, timing, cocktailkaart, presentatie en alle praktische details.",
   },
   {
-    title: "Shinen op locatie",
-    description: "Professionele service, gastvrij contact en cocktails die het moment groter maken.",
+    title: "Showtime",
+    description: "Professionele service, oprechte gastvrijheid en cocktails die precies bij het moment passen.",
   },
 ];
 
@@ -96,88 +102,92 @@ function SectionHeading({
   body?: string;
 }) {
   return (
-    <div className="flex max-w-3xl flex-col gap-4">
-      <Badge variant="accent" className="w-fit">
-        {eyebrow}
-      </Badge>
-      <h2 className="display-copy text-4xl leading-[1.02] text-foreground sm:text-5xl lg:text-6xl">
+    <div className="flex max-w-4xl flex-col gap-5">
+      <div className="flex items-center gap-4">
+        <span className="h-px w-12 bg-secondary/70" />
+        <span className="eyebrow-copy text-secondary">{eyebrow}</span>
+      </div>
+      <h2 className="display-copy text-5xl leading-[0.92] text-foreground sm:text-6xl xl:text-7xl">
         {title}
       </h2>
-      {body ? <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">{body}</p> : null}
+      {body ? <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">{body}</p> : null}
     </div>
   );
 }
 
-function BrandVisual() {
+function HeroVisual() {
   return (
-    <div className="bar-visual" aria-label="Sfeervisual van een mobiele cocktailbar met citrus-accenten">
-      <div className="absolute left-6 top-6 flex items-center gap-3 rounded-md border border-border bg-background/70 px-4 py-3 backdrop-blur sm:left-8 sm:top-8">
-        <Image src="/logodashingblends.webp" width={40} height={40} alt="" aria-hidden />
-        <div className="leading-tight">
-          <p className="text-sm font-bold">Dashing Blends</p>
-          <p className="text-xs text-muted-foreground">Cocktails & hospitality</p>
-        </div>
-      </div>
+    <figure className="hero-visual">
+      <Image
+        src="/duane-03.webp"
+        alt="Duane bereidt een cocktail achter de bar"
+        fill
+        priority
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="object-cover object-center"
+      />
 
-      <div className="absolute inset-x-8 top-[28%] h-px glass-line" />
-      <div className="absolute bottom-8 left-6 right-6 grid gap-3 sm:left-8 sm:right-8 sm:grid-cols-[1fr_auto] sm:items-end">
-        <div className="rounded-md border border-border bg-background/74 p-5 backdrop-blur">
-          <p className="text-sm uppercase text-muted-foreground">Signature mood</p>
-          <p className="display-copy mt-2 text-3xl leading-none text-primary sm:text-4xl">
-            Expect the Unexpected
+      <div className="absolute left-8 top-8 z-10 flex items-center gap-3 border border-secondary/30 bg-background/72 px-4 py-3 backdrop-blur-md sm:left-10 sm:top-10">
+        <Image src="/logodashingblends.webp" width={42} height={42} alt="" aria-hidden />
+        <div className="leading-tight">
+          <p className="text-sm font-extrabold uppercase tracking-[0.12em]">Dashing Blends</p>
+          <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-secondary">
+            Venlo · est. hospitality
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-2 sm:w-52">
-          {["Lime", "Ice", "Shake"].map((label, index) => (
-            <div
-              key={label}
-              className="aspect-square rounded-md border border-border bg-card/82 p-3 text-xs font-semibold text-muted-foreground"
-            >
-              <span className="block text-foreground">0{index + 1}</span>
-              {label}
-            </div>
-          ))}
-        </div>
       </div>
 
-      <div className="absolute right-8 top-24 size-28 rounded-full border border-primary/40 bg-primary/10" />
-      <div className="absolute right-20 top-36 size-16 rounded-full border border-accent/40 bg-accent/20" />
-      <div className="absolute bottom-44 left-12 h-36 w-24 rounded-b-full rounded-t-md border border-border bg-foreground/8 backdrop-blur-sm" />
-      <div className="absolute bottom-44 left-44 h-24 w-20 rounded-b-full rounded-t-md border border-border bg-secondary/15 backdrop-blur-sm" />
-      <div className="absolute bottom-36 right-20 h-28 w-28 rotate-12 rounded-md border border-border bg-accent/15" />
-    </div>
+      <figcaption className="absolute bottom-9 left-8 right-8 z-10 sm:bottom-10 sm:left-10 sm:right-10">
+        <div className="gold-rule mb-6 h-px" />
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="eyebrow-copy text-secondary">Behind the bar</p>
+            <p className="display-copy mt-2 max-w-xl text-4xl leading-none text-foreground sm:text-5xl">
+              Craft, character & a little theatre.
+            </p>
+          </div>
+          <div className="border-l border-secondary/35 pl-5 text-sm leading-7 text-muted-foreground">
+            <p>Mobiele bar</p>
+            <p>Workshops</p>
+            <p>Hospitality support</p>
+          </div>
+        </div>
+      </figcaption>
+    </figure>
   );
 }
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <header className="sticky top-0 z-40 border-b border-border bg-background/82 backdrop-blur-xl">
-        <div className="section-shell flex min-h-20 items-center justify-between gap-5">
+      <header className="sticky top-0 z-50 border-b border-border/80 bg-background/88 backdrop-blur-xl">
+        <div className="section-shell flex min-h-20 items-center justify-between gap-6">
           <a href="#" className="flex items-center gap-3" aria-label="Dashing Blends home">
-            <Image src="/logodashingblends.webp" width={44} height={44} alt="" aria-hidden priority />
+            <Image src="/logodashingblends.webp" width={46} height={46} alt="" aria-hidden priority />
             <div className="leading-tight">
-              <p className="text-sm font-black uppercase tracking-normal">Dashing Blends</p>
-              <p className="text-xs text-muted-foreground">Venlo · op locatie</p>
+              <p className="text-sm font-black uppercase tracking-[0.08em]">Dashing Blends</p>
+              <p className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-secondary">
+                Cocktails & hospitality
+              </p>
             </div>
           </a>
 
-          <nav aria-label="Hoofdnavigatie" className="hidden items-center gap-1 md:flex">
+          <nav aria-label="Hoofdnavigatie" className="hidden items-center gap-2 lg:flex">
             {navItems.map((item) => (
-              <Button key={item.href} asChild variant="ghost" size="sm">
+              <Button key={item.href} asChild variant="ghost" size="sm" className="uppercase tracking-[0.12em]">
                 <a href={item.href}>{item.label}</a>
               </Button>
             ))}
           </nav>
 
-          <Button asChild className="hidden sm:inline-flex">
+          <Button asChild className="hidden uppercase tracking-[0.12em] sm:inline-flex">
             <a href="mailto:info@dashingblends.nl">
               <Mail data-icon="inline-start" />
               Aanvragen
             </a>
           </Button>
 
-          <Button asChild variant="outline" size="icon" className="md:hidden" aria-label="Ga naar diensten">
+          <Button asChild variant="outline" size="icon" className="lg:hidden" aria-label="Ga naar diensten">
             <a href="#diensten">
               <MenuSquare />
             </a>
@@ -185,228 +195,300 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="section-shell grid min-h-[calc(100dvh-80px)] items-center gap-10 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:py-16">
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-wrap gap-2">
-            <Badge variant="accent">Mobiele cocktailbar</Badge>
-            <Badge variant="outline">Workshops</Badge>
-            <Badge variant="outline">Horeca support</Badge>
+      <section className="section-shell grid min-h-[calc(100dvh-80px)] items-center gap-12 py-14 lg:grid-cols-[0.82fr_1.18fr] lg:py-20">
+        <div className="flex flex-col gap-9 lg:pr-6">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-secondary/70" />
+            <span className="eyebrow-copy text-secondary">Cocktail atelier · Venlo</span>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <h1 className="display-copy text-5xl leading-[0.96] text-foreground sm:text-6xl lg:text-7xl">
-              Cocktails die je event laten landen.
+          <div className="flex flex-col gap-7">
+            <h1 className="display-copy text-6xl leading-[0.82] text-foreground sm:text-7xl xl:text-[7.2rem] 2xl:text-[8.4rem]">
+              Cocktails met klasse. Service met karakter.
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
-              Dashing Blends brengt professionele cocktails, warme hospitality en een stijlvolle barervaring naar
-              events in en rond Venlo. Van bartender tot complete cocktailbeleving op locatie.
+              Dashing Blends brengt een stijlvolle speakeasy-ervaring naar jouw locatie. Met ambachtelijke cocktails,
+              ontspannen hospitality en precies genoeg show om de avond memorabel te maken.
             </p>
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="uppercase tracking-[0.12em]">
               <a href="mailto:info@dashingblends.nl?subject=Aanvraag%20Dashing%20Blends">
                 Plan je event
                 <ArrowRight data-icon="inline-end" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="#diensten">Bekijk diensten</a>
+            <Button asChild variant="outline" size="lg" className="uppercase tracking-[0.12em]">
+              <a href="#diensten">Ontdek de diensten</a>
             </Button>
           </div>
 
-          <dl className="grid grid-cols-3 gap-3 border-y border-border py-5">
+          <dl className="grid grid-cols-3 gap-4 border-y border-border py-6">
             <div>
-              <dt className="text-xs uppercase text-muted-foreground">Basis</dt>
-              <dd className="mt-1 font-semibold">Venlo</dd>
+              <dt className="eyebrow-copy text-muted-foreground">Basis</dt>
+              <dd className="mt-2 display-copy text-2xl text-secondary">Venlo</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase text-muted-foreground">Voor</dt>
-              <dd className="mt-1 font-semibold">Privé & zakelijk</dd>
+              <dt className="eyebrow-copy text-muted-foreground">Voor</dt>
+              <dd className="mt-2 display-copy text-2xl text-secondary">Privé & zakelijk</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase text-muted-foreground">Stijl</dt>
-              <dd className="mt-1 font-semibold">Maatwerk</dd>
+              <dt className="eyebrow-copy text-muted-foreground">Stijl</dt>
+              <dd className="mt-2 display-copy text-2xl text-secondary">Maatwerk</dd>
             </div>
           </dl>
         </div>
 
-        <BrandVisual />
+        <HeroVisual />
       </section>
 
-      <section className="border-y border-border bg-card/40 py-5">
-        <div className="section-shell flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
-          {moments.map((moment) => (
-            <span key={moment} className="rounded-sm border border-border bg-background/45 px-3 py-2">
-              {moment}
-            </span>
+      <section className="border-y border-border/80 bg-card/40 py-5">
+        <div className="section-shell flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          {moments.map((moment, index) => (
+            <div key={moment} className="flex items-center gap-8">
+              <span className="eyebrow-copy text-muted-foreground">{moment}</span>
+              {index < moments.length - 1 ? <span className="hidden size-1 rounded-full bg-primary md:block" /> : null}
+            </div>
           ))}
         </div>
       </section>
 
-      <section id="diensten" className="section-shell py-20 sm:py-28">
-        <div className="grid gap-10 lg:grid-cols-[0.75fr_1fr] lg:items-end">
+      <section id="diensten" className="section-shell py-24 sm:py-32">
+        <div className="grid gap-10 xl:grid-cols-[1fr_0.52fr] xl:items-end">
           <SectionHeading
             eyebrow="Diensten"
-            title="Een barervaring die zich naar jouw moment vormt."
-            body="Geen standaardpakket. Wel een duidelijke keuze uit workshops, barservice en support, met genoeg flexibiliteit om het precies passend te maken."
+            title="Een barervaring die jouw gelegenheid een eigen signatuur geeft."
+            body="Van een intieme workshop tot een volledige cocktailbar op locatie. Iedere dienst krijgt dezelfde aandacht voor kwaliteit, presentatie en gastcontact."
           />
-          <p className="text-base leading-7 text-muted-foreground lg:max-w-md lg:justify-self-end">
-            Of je nu een avond volledig wilt ontzorgen of alleen extra slagkracht achter de bar zoekt: Dashing
-            Blends sluit aan op het tempo, de sfeer en de schaal van jouw event.
+          <p className="text-base leading-8 text-muted-foreground xl:max-w-md xl:justify-self-end">
+            Geen neon circus en geen dertien-in-een-dozijn cocktailkaart. Wel goede ingrediënten, beheerste presentatie en een
+            sfeer die past bij jouw gasten.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 xl:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
 
             return (
               <article
                 key={service.title}
-                className="service-card rounded-lg border border-border bg-card p-6 shadow-[0_22px_60px_oklch(0_0_0_/_0.18)] transition-colors hover:border-primary/50"
+                className="service-card vintage-panel overflow-hidden border border-border transition duration-500 hover:-translate-y-1 hover:border-primary/60"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-semibold text-primary">{service.eyebrow}</p>
-                    <h3 className="display-copy mt-3 text-3xl leading-none text-card-foreground">
-                      {service.title}
-                    </h3>
-                  </div>
-                  <div className="flex size-12 items-center justify-center rounded-md bg-muted text-primary">
+                <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} door Dashing Blends`}
+                    fill
+                    sizes="(min-width: 1280px) 28vw, (min-width: 768px) 50vw, 100vw"
+                    className={`object-cover grayscale-[20%] transition duration-700 hover:scale-105 hover:grayscale-0 ${service.imagePosition}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                  <div className="absolute bottom-5 left-5 z-10 flex size-12 items-center justify-center border border-secondary/40 bg-background/80 text-secondary backdrop-blur">
                     <Icon aria-hidden />
                   </div>
                 </div>
-                <p className="mt-6 text-sm leading-7 text-muted-foreground @md:text-base">{service.description}</p>
-                <ul className="mt-6 flex flex-col gap-3">
-                  {service.points.map((point) => (
-                    <li key={point} className="flex items-center gap-3 text-sm">
-                      <span className="flex size-5 items-center justify-center rounded-sm bg-primary text-primary-foreground">
-                        <Check aria-hidden />
-                      </span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+
+                <div className="relative z-10 p-7 sm:p-8">
+                  <p className="eyebrow-copy text-primary">{service.eyebrow}</p>
+                  <h3 className="display-copy mt-4 text-4xl leading-none text-card-foreground">{service.title}</h3>
+                  <p className="mt-6 text-sm leading-7 text-muted-foreground @md:text-base">{service.description}</p>
+                  <div className="gold-rule my-7 h-px" />
+                  <ul className="flex flex-col gap-3">
+                    {service.points.map((point) => (
+                      <li key={point} className="flex items-center gap-3 text-sm">
+                        <span className="flex size-5 items-center justify-center border border-primary/50 bg-primary/10 text-primary">
+                          <Check aria-hidden className="size-3.5" />
+                        </span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             );
           })}
         </div>
       </section>
 
-      <section className="bg-foreground py-20 text-background sm:py-28">
-        <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="flex flex-col gap-5">
-            <Badge variant="secondary" className="w-fit">
-              Waarom dit werkt
-            </Badge>
-            <h2 className="display-copy text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
-              Gasten onthouden geen bar. Ze onthouden hoe de avond voelde.
-            </h2>
+      <section className="border-y border-border bg-card/35 py-24 sm:py-32">
+        <div className="section-shell grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="grid grid-cols-[0.72fr_1fr] gap-5">
+            <div className="image-frame min-h-[520px] translate-y-12">
+              <Image
+                src="/duane-02.webp"
+                alt="Duane tijdens een cocktailworkshop"
+                fill
+                sizes="(min-width: 1024px) 32vw, 45vw"
+                className="object-cover object-[50%_20%]"
+              />
+            </div>
+            <div className="image-frame min-h-[620px]">
+              <Image
+                src="/duane-01.webp"
+                alt="Dashing Blends in actie achter de bar"
+                fill
+                sizes="(min-width: 1024px) 38vw, 55vw"
+                className="object-cover object-[68%_center]"
+              />
+            </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="flex flex-col gap-7 lg:pl-10">
+            <div className="flex items-center gap-4">
+              <span className="h-px w-12 bg-secondary/70" />
+              <span className="eyebrow-copy text-secondary">The Dashing standard</span>
+            </div>
+            <h2 className="display-copy text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
+              Niet zomaar drankjes. Een zorgvuldig geregisseerd moment.
+            </h2>
+            <p className="text-lg leading-8 text-muted-foreground">
+              Goede cocktails zijn techniek. Een goede avond is timing, aandacht en aanvoelen wat een gast nodig heeft.
+              Dashing Blends combineert die twee, zonder dat het geforceerd of overdreven wordt.
+            </p>
+            <blockquote className="border-l border-primary pl-6">
+              <p className="display-copy text-3xl leading-tight text-secondary">
+                “De beste service voelt moeiteloos, juist omdat achter de schermen alles klopt.”
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-24 text-primary-foreground sm:py-32">
+        <div className="section-shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div className="flex flex-col gap-6">
+            <Badge variant="secondary" className="w-fit uppercase tracking-[0.18em]">
+              Waarom dit werkt
+            </Badge>
+            <h2 className="display-copy text-5xl leading-[0.9] sm:text-6xl xl:text-7xl">
+              Gasten onthouden niet alleen wat er in hun glas zat.
+            </h2>
+            <p className="max-w-xl text-lg leading-8 text-primary-foreground/78">
+              Ze onthouden de sfeer, de aandacht en het gevoel dat alles precies op zijn plaats viel.
+            </p>
+          </div>
+
+          <div className="grid gap-px overflow-hidden border border-primary-foreground/20 bg-primary-foreground/20 sm:grid-cols-2">
             {highlights.map((highlight) => (
-              <div key={highlight} className="rounded-lg border border-background/15 bg-background/6 p-5">
-                <Sparkles aria-hidden className="mb-5 text-secondary" />
-                <p className="font-semibold leading-7">{highlight}</p>
+              <div key={highlight} className="bg-primary p-7 sm:p-8">
+                <Sparkles aria-hidden className="mb-8 text-secondary" />
+                <p className="display-copy text-3xl leading-tight">{highlight}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="werkwijze" className="section-shell py-20 sm:py-28">
+      <section id="werkwijze" className="section-shell py-24 sm:py-32">
         <SectionHeading
           eyebrow="Werkwijze"
-          title="Van eerste vraag naar laatste cocktail, zonder gedoe."
-          body="Een compact proces met heldere afspraken, zodat jij weet wat er geregeld is en waar nog keuzes gemaakt moeten worden."
+          title="Van eerste idee naar laatste cocktail, zonder gedoe."
+          body="Een helder proces, duidelijke afspraken en genoeg ruimte om het concept persoonlijk te maken. Mensen hebben al genoeg vergaderingen over vergaderingen."
         />
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 xl:grid-cols-4">
           {process.map((step, index) => (
-            <article key={step.title} className="rounded-lg border border-border bg-card/80 p-5">
-              <p className="text-sm font-semibold text-primary">Stap {index + 1}</p>
-              <h3 className="display-copy mt-5 text-3xl">{step.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">{step.description}</p>
+            <article key={step.title} className="vintage-panel min-h-80 bg-card p-7 sm:p-8">
+              <div className="relative z-10">
+                <p className="display-copy text-5xl text-primary/70">0{index + 1}</p>
+                <div className="gold-rule my-7 h-px" />
+                <h3 className="display-copy text-4xl">{step.title}</h3>
+                <p className="mt-5 text-sm leading-7 text-muted-foreground">{step.description}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="over" className="section-shell grid gap-10 py-20 sm:py-28 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div className="rounded-lg border border-border bg-card p-6 sm:p-8">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-md bg-muted p-5">
-              <UsersRound aria-hidden className="text-primary" />
-              <p className="mt-8 text-sm text-muted-foreground">Voor groepen</p>
-              <p className="display-copy mt-2 text-3xl">Klein tot groot</p>
-            </div>
-            <div className="rounded-md bg-muted p-5">
-              <CalendarCheck aria-hidden className="text-primary" />
-              <p className="mt-8 text-sm text-muted-foreground">Planning</p>
-              <p className="display-copy mt-2 text-3xl">Flexibel</p>
-            </div>
-            <div className="rounded-md bg-muted p-5 sm:col-span-2">
-              <MapPin aria-hidden className="text-primary" />
-              <p className="mt-8 text-sm text-muted-foreground">Regio</p>
-              <p className="display-copy mt-2 text-4xl">Venlo en omgeving</p>
-            </div>
+      <section id="over" className="section-shell grid gap-12 py-24 sm:py-32 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="image-frame min-h-[680px]">
+          <Image
+            src="/duane-04.webp"
+            alt="Duane van Dashing Blends met een selectie cocktails"
+            fill
+            sizes="(min-width: 1024px) 42vw, 100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-background via-background/75 to-transparent p-8 pt-32 sm:p-10 sm:pt-40">
+            <p className="eyebrow-copy text-secondary">Founder & bartender</p>
+            <p className="display-copy mt-3 text-5xl">Duane</p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-6">
-          <Badge variant="accent" className="w-fit">
-            Over Dashing Blends
-          </Badge>
-          <h2 className="display-copy text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
-            Gastvrijheid is geen onderdeel van het evenement. Het is de beleving.
+        <div className="flex flex-col gap-7 lg:pl-8">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-secondary/70" />
+            <span className="eyebrow-copy text-secondary">Over Dashing Blends</span>
+          </div>
+          <h2 className="display-copy text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
+            Gastvrijheid is geen extraatje. Het is de hele beleving.
           </h2>
-          <div className="flex flex-col gap-5 text-base leading-8 text-muted-foreground">
+          <div className="flex flex-col gap-5 text-base leading-8 text-muted-foreground sm:text-lg">
             <p>
               Dashing Blends is ontstaan vanuit liefde voor cocktails en horeca. Inmiddels draait het om complete
               ervaringen waarin kwaliteit, presentatie en persoonlijke aandacht samenkomen.
             </p>
             <p>
-              De aanpak is betrokken en professioneel: meedenken in de voorbereiding, soepel schakelen op locatie
-              en gasten het gevoel geven dat alles klopt.
+              Duane denkt mee in de voorbereiding, schakelt soepel op locatie en zorgt dat gasten zich gezien voelen.
+              Professioneel waar het moet, ontspannen waar het kan.
             </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            <div className="border border-border bg-card p-5">
+              <UsersRound aria-hidden className="text-primary" />
+              <p className="mt-7 text-xs uppercase tracking-[0.16em] text-muted-foreground">Groepen</p>
+              <p className="display-copy mt-2 text-2xl">Klein tot groot</p>
+            </div>
+            <div className="border border-border bg-card p-5">
+              <CalendarCheck aria-hidden className="text-primary" />
+              <p className="mt-7 text-xs uppercase tracking-[0.16em] text-muted-foreground">Planning</p>
+              <p className="display-copy mt-2 text-2xl">Flexibel</p>
+            </div>
+            <div className="border border-border bg-card p-5">
+              <MapPin aria-hidden className="text-primary" />
+              <p className="mt-7 text-xs uppercase tracking-[0.16em] text-muted-foreground">Regio</p>
+              <p className="display-copy mt-2 text-2xl">Venlo e.o.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="section-shell py-20 sm:py-28">
-        <div className="grid overflow-hidden rounded-lg border border-border bg-card lg:grid-cols-[1fr_0.8fr]">
-          <div className="p-6 sm:p-10 lg:p-12">
-            <Badge variant="accent" className="w-fit">
-              Klaar om te plannen?
-            </Badge>
-            <h2 className="display-copy mt-6 text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
+      <section id="contact" className="section-shell pb-24 pt-12 sm:pb-32">
+        <div className="vintage-panel grid overflow-hidden border border-border lg:grid-cols-[1fr_0.72fr]">
+          <div className="relative z-10 p-7 sm:p-10 lg:p-14">
+            <div className="flex items-center gap-4">
+              <span className="h-px w-12 bg-secondary/70" />
+              <span className="eyebrow-copy text-secondary">Klaar om te plannen?</span>
+            </div>
+            <h2 className="display-copy mt-7 max-w-4xl text-5xl leading-[0.9] sm:text-6xl xl:text-7xl">
               Vertel wat je organiseert. Dan maken we er iets smaakvols van.
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
+            <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
               Mail je datum, locatie, groepsgrootte en het type event. Dan kan Dashing Blends gericht meedenken over
               workshop, cocktailbar, horeca support of een passende combinatie.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="uppercase tracking-[0.1em]">
                 <a href="mailto:info@dashingblends.nl?subject=Aanvraag%20Dashing%20Blends">
                   info@dashingblends.nl
                   <ArrowRight data-icon="inline-end" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="#diensten">Nog even vergelijken</a>
+              <Button asChild variant="outline" size="lg" className="uppercase tracking-[0.1em]">
+                <a href="#diensten">Bekijk de mogelijkheden</a>
               </Button>
             </div>
           </div>
 
-          <aside className="border-t border-border bg-background/50 p-6 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
-            <h3 className="text-sm font-semibold uppercase text-muted-foreground">Handig om mee te sturen</h3>
-            <ul className="mt-6 flex flex-col gap-4">
+          <aside className="relative z-10 border-t border-border bg-background/38 p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-14">
+            <h3 className="eyebrow-copy text-secondary">Handig om mee te sturen</h3>
+            <ul className="mt-8 flex flex-col gap-5">
               {["Datum en locatie", "Aantal gasten", "Gewenste dienst", "Sfeer of thema", "Binnen of buiten"].map(
                 (item) => (
-                  <li key={item} className="flex items-center justify-between gap-4 border-b border-border pb-4">
+                  <li key={item} className="flex items-center justify-between gap-4 border-b border-border pb-5">
                     <span>{item}</span>
                     <ChevronRight aria-hidden className="text-primary" />
                   </li>
@@ -418,12 +500,14 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-border py-10">
-        <div className="section-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="section-shell flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <Image src="/logodashingblends.webp" width={40} height={40} alt="" aria-hidden />
+            <Image src="/logodashingblends.webp" width={44} height={44} alt="" aria-hidden />
             <div>
-              <p className="font-bold">Dashing Blends</p>
-              <p className="text-sm text-muted-foreground">Cocktails, hospitality en beleving</p>
+              <p className="font-extrabold uppercase tracking-[0.08em]">Dashing Blends</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                Cocktails, hospitality & beleving
+              </p>
             </div>
           </div>
           <p className="text-sm text-muted-foreground">Venlo · info@dashingblends.nl</p>
