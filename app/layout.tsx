@@ -9,6 +9,7 @@ import "./refinements.css";
 import "./parallax-fix.css";
 import "./finishing-touches.css";
 import "./site-finish.css";
+import "./typography-tuning.css";
 
 const displayFont = localFont({
   src: "../public/fonts/Shutdawn-Regular.woff2",
