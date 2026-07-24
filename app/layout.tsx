@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, DM_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 
 import "./globals.css";
 
-const displayFont = Bodoni_Moda({
-  subsets: ["latin"],
+const displayFont = localFont({
+  src: "../public/fonts/Shutdawn-Regular.woff2",
   variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  weight: "500",
+  style: "normal",
 });
 
 const bodyFont = DM_Sans({
