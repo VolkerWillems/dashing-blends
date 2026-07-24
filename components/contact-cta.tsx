@@ -9,11 +9,15 @@ export function ContactCta({
   title = "Vertel wat je organiseert. Dan kijkt Dashing Blends gericht met je mee.",
   body = "Vermeld de datum, locatie, het aantal gasten en de dienst waar je interesse in hebt. Zo kan Duane snel en concreet reageren.",
   image,
+  imageAlt = "Dashing Blends aan het werk in vintage comicstijl",
+  imagePosition = "object-center",
 }: {
   eyebrow?: string;
   title?: string;
   body?: string;
   image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
 }) {
   const ctaImage = image ?? "/comic/duane-cocktail-05.png";
 
@@ -38,10 +42,10 @@ export function ContactCta({
         <div className="cta-media motion-media min-h-[360px] sm:min-h-[460px] lg:min-h-full">
           <Image
             src={ctaImage}
-            alt="Duane van Dashing Blends met een cocktail in vintage comicstijl"
+            alt={imageAlt}
             fill
             sizes="(min-width: 1024px) 42vw, 100vw"
-            className="object-cover object-center"
+            className={`object-cover ${imagePosition}`}
           />
           <span className="cta-image-label" aria-hidden="true">
             Dashing Blends · Op locatie
