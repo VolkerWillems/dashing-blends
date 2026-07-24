@@ -16,7 +16,7 @@ export function PageHero({
   imagePosition?: string;
 }) {
   return (
-    <section className="page-hero-layout section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-18">
+    <section id="page-content" className="page-hero-layout section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-18">
       <div className="page-hero-copy flex flex-col gap-6 lg:pr-4">
         <p className="eyebrow-copy">{eyebrow}</p>
         <h1 className="display-copy max-w-4xl text-[clamp(3rem,6.1vw,6.9rem)] text-foreground">{title}</h1>
