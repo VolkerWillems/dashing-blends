@@ -1,0 +1,43 @@
+/* Reliable parallax layer. JavaScript updates the media wrapper on scroll. */
+.parallax-divider {
+  overflow: hidden;
+}
+
+.parallax-divider-media {
+  inset: -18% -8%;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.parallax-divider-image {
+  animation: none !important;
+  transform: scale(1.16) !important;
+  transform-origin: center;
+}
+
+@media (max-width: 1024px) {
+  .parallax-divider-media {
+    inset: -16% -7%;
+  }
+
+  .parallax-divider-image {
+    transform: scale(1.14) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .parallax-divider-media {
+    inset: -14% -6%;
+  }
+
+  .parallax-divider-image {
+    transform: scale(1.12) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-divider-media {
+    transform: none !important;
+  }
+}
