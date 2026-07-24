@@ -9,9 +9,12 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Mobiele cocktailbar | Dashing Blends",
+  title: "Mobiele cocktailbar en bartender op locatie",
   description:
     "Een mobiele cocktailbar en bartender op locatie voor bruiloften, bedrijfsfeesten, privéfeesten en evenementen in Venlo en omgeving.",
+  alternates: {
+    canonical: "/mobiele-cocktailbar",
+  },
 };
 
 const occasions = [
@@ -32,7 +35,7 @@ const included = [
 
 export default function MobileCocktailBarPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <SiteHeader />
       <PageHero
         eyebrow="Mobiele cocktailbar"
@@ -58,7 +61,7 @@ export default function MobileCocktailBarPage() {
             </p>
           </div>
 
-          <div className="fade-up grid gap-6 sm:grid-cols-2">
+          <div className="motion-grid grid gap-6 sm:grid-cols-2">
             <div className="subtle-panel motion-surface border border-border p-8">
               <Martini className="text-secondary" aria-hidden />
               <h3 className="display-copy mt-8 text-4xl">Cocktailkaart</h3>
@@ -135,6 +138,7 @@ export default function MobileCocktailBarPage() {
       <ContactCta
         title="Een mobiele cocktailbar voor jouw evenement?"
         body="Stuur de datum, locatie, het verwachte aantal gasten en een korte omschrijving van de gelegenheid. Dan kan Dashing Blends de mogelijkheden gericht beoordelen."
+        image="/comic/duane-cocktail-05.png"
       />
       <SiteFooter />
     </main>
