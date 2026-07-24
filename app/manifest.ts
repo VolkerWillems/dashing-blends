@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
     icons: [
       {
         src: "/logodashingblends.webp",
-        sizes: "512x512",
+        sizes: "any",
         type: "image/webp",
         purpose: "any",
       },
