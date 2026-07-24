@@ -105,6 +105,149 @@ html[data-db-cta-image-fit="cover"] .cta-media > img {
   object-fit: cover !important;
 }
 
+/* Speakeasy 1950s: warm black, burgundy velvet, aged brass and restrained mid-century detailing. */
+html[data-db-design="speakeasy"] {
+  --ink: #080706;
+  --border: color-mix(in srgb, var(--secondary) 28%, transparent);
+  --accent: color-mix(in srgb, var(--primary) 38%, #17110e);
+  --muted: color-mix(in srgb, var(--card) 82%, #000);
+  --input: color-mix(in srgb, var(--card) 88%, #000);
+  --ring: var(--secondary);
+}
+
+html[data-db-design="speakeasy"] body {
+  background:
+    radial-gradient(circle at 18% 2%, color-mix(in srgb, var(--primary) 16%, transparent), transparent 32rem),
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--secondary) 8%, transparent), transparent 34rem),
+    linear-gradient(145deg, #090806, var(--background) 52%, #080706) !important;
+}
+
+html[data-db-design="speakeasy"] body::before {
+  opacity: 0.075;
+  background-image:
+    repeating-linear-gradient(92deg, transparent 0 22px, rgba(255, 244, 214, 0.08) 23px, transparent 24px),
+    radial-gradient(circle, rgba(255, 244, 214, 0.18) 0 0.55px, transparent 0.7px) !important;
+  background-size: 100% 100%, 5px 5px !important;
+  mix-blend-mode: soft-light;
+}
+
+html[data-db-design="speakeasy"] body::after {
+  opacity: 0.055;
+  background-image: repeating-linear-gradient(0deg, transparent 0 4px, rgba(0, 0, 0, 0.32) 5px) !important;
+}
+
+html[data-db-design="speakeasy"] .display-copy {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.018em !important;
+  line-height: 0.98 !important;
+  text-shadow: none !important;
+  text-transform: uppercase;
+}
+
+html[data-db-design="speakeasy"] .eyebrow-copy {
+  border: 1px solid color-mix(in srgb, var(--secondary) 72%, transparent) !important;
+  background: color-mix(in srgb, var(--primary) 48%, #150f0c) !important;
+  padding: 0.48rem 0.78rem !important;
+  color: var(--foreground) !important;
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+html[data-db-design="speakeasy"] .site-header {
+  border-bottom: 1px solid color-mix(in srgb, var(--secondary) 38%, transparent) !important;
+  background: color-mix(in srgb, var(--background) 94%, transparent) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.34) !important;
+  backdrop-filter: blur(14px);
+}
+
+html[data-db-design="speakeasy"] .site-header::after {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent) !important;
+}
+
+html[data-db-design="speakeasy"] .nav-link {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+html[data-db-design="speakeasy"] .nav-link::after {
+  height: 1px;
+  background: var(--secondary);
+  transform: scaleX(0);
+}
+
+html[data-db-design="speakeasy"] .nav-link:hover::after,
+html[data-db-design="speakeasy"] .nav-link-active::after {
+  transform: scaleX(1);
+}
+
+html[data-db-design="speakeasy"] :is(.header-cta, .hero-actions a, .cta-copy a, .contact-action) {
+  border: 1px solid color-mix(in srgb, var(--secondary) 52%, transparent) !important;
+  border-radius: 2px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 88%, #fff 4%), var(--primary)) !important;
+  color: var(--foreground) !important;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32) !important;
+}
+
+html[data-db-design="speakeasy"] :is(.header-cta, .hero-actions a, .cta-copy a, .contact-action):hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 34px rgba(0, 0, 0, 0.38) !important;
+}
+
+html[data-db-design="speakeasy"] :is(.service-card, .subtle-panel, .cta-card, .image-frame, .hero-visual, .page-hero-image) {
+  border: 1px solid color-mix(in srgb, var(--secondary) 28%, transparent) !important;
+  border-radius: 2px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-db-design="speakeasy"] :is(.service-card, .subtle-panel, .cta-card)::after {
+  opacity: 0 !important;
+}
+
+html[data-db-design="speakeasy"] :is(.hero-visual, .page-hero-image, .image-frame, .cta-media) img {
+  filter: sepia(0.18) saturate(0.82) contrast(1.06) brightness(0.92);
+}
+
+html[data-db-design="speakeasy"] :is(.hero-visual, .page-hero-image) figcaption {
+  border: 1px solid color-mix(in srgb, var(--secondary) 55%, transparent) !important;
+  background: color-mix(in srgb, var(--background) 88%, transparent) !important;
+  color: var(--foreground) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(10px);
+}
+
+html[data-db-design="speakeasy"] .cta-image-label {
+  border: 1px solid color-mix(in srgb, var(--secondary) 66%, transparent) !important;
+  background: color-mix(in srgb, var(--background) 88%, transparent) !important;
+  color: var(--secondary) !important;
+  box-shadow: none !important;
+  letter-spacing: 0.16em;
+}
+
+html[data-db-design="speakeasy"] .parallax-divider::after {
+  border: 1px solid color-mix(in srgb, var(--secondary) 42%, transparent) !important;
+}
+
+html[data-db-design="speakeasy"] .site-footer {
+  border-top: 1px solid color-mix(in srgb, var(--secondary) 28%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--background) 94%, #000), #070605) !important;
+}
+
+html[data-db-design="speakeasy"] .style-preview-label {
+  color: var(--secondary);
+}
+
+html[data-db-design="speakeasy"] .preview-card {
+  border-color: color-mix(in srgb, var(--secondary) 42%, transparent);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
 @media (max-width: 767px) {
   html[data-db-heading-scale="compact"] .hero-copy > h1.display-copy,
   html[data-db-heading-scale="compact"] .page-hero-copy > h1.display-copy {
@@ -122,5 +265,9 @@ html[data-db-cta-image-fit="cover"] .cta-media > img {
 
   html[data-db-heading-scale="large"] main h2.display-copy {
     font-size: clamp(2.1rem, 9.2vw, 3.05rem) !important;
+  }
+
+  html[data-db-design="speakeasy"] .display-copy {
+    letter-spacing: 0.012em !important;
   }
 }
