@@ -67,7 +67,7 @@ export default function Home() {
         <div className="fade-up flex flex-col gap-7 lg:pr-4">
           <p className="eyebrow-copy">Cocktails & hospitality · Venlo</p>
 
-          <h1 className="display-copy max-w-4xl text-[clamp(3.6rem,7.5vw,8.7rem)] text-foreground">
+          <h1 className="display-copy max-w-4xl text-[clamp(3.2rem,6.3vw,7.4rem)] text-foreground">
             Cocktails met karakter. Service met aandacht.
           </h1>
 
