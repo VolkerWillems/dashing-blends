@@ -4,6 +4,7 @@ import { Check, Martini, PartyPopper, Sparkles } from "lucide-react";
 
 import { ContactCta } from "@/components/contact-cta";
 import { PageHero } from "@/components/page-hero";
+import { ParallaxDivider } from "@/components/parallax-divider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -46,7 +47,7 @@ export default function MobileCocktailBarPage() {
         <div className="section-shell grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div className="fade-up lg:pr-10">
             <div className="flex items-center gap-4">
-              <span className="h-px w-12 bg-secondary/70" />
+              <span className="section-rule h-px w-12 bg-secondary/70" />
               <span className="eyebrow-copy text-secondary">Barservice op maat</span>
             </div>
             <h2 className="display-copy mt-7 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
@@ -58,14 +59,14 @@ export default function MobileCocktailBarPage() {
           </div>
 
           <div className="fade-up grid gap-6 sm:grid-cols-2">
-            <div className="subtle-panel border border-border p-8">
+            <div className="subtle-panel motion-surface border border-border p-8">
               <Martini className="text-secondary" aria-hidden />
               <h3 className="display-copy mt-8 text-4xl">Cocktailkaart</h3>
               <p className="mt-5 leading-8 text-muted-foreground">
                 De selectie wordt afgestemd op de gelegenheid. Ook alcoholvrije opties kunnen onderdeel zijn van de kaart.
               </p>
             </div>
-            <div className="subtle-panel border border-border p-8">
+            <div className="subtle-panel motion-surface border border-border p-8">
               <PartyPopper className="text-secondary" aria-hidden />
               <h3 className="display-copy mt-8 text-4xl">Gastcontact</h3>
               <p className="mt-5 leading-8 text-muted-foreground">
@@ -78,7 +79,7 @@ export default function MobileCocktailBarPage() {
 
       <section className="section-shell py-24 sm:py-32">
         <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div className="image-frame fade-up min-h-[660px]">
+          <div className="image-frame motion-media fade-up min-h-[660px]">
             <Image
               src="/comic/duane-work-02.png"
               alt="Duane verzorgt professionele barservice in vintage comicstijl"
@@ -92,7 +93,7 @@ export default function MobileCocktailBarPage() {
           <div className="fade-up lg:pl-10">
             <p className="eyebrow-copy text-secondary">Wat kan worden verzorgd</p>
             <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl">Van bartender tot complete baropstelling.</h2>
-            <ul className="mt-9 grid gap-4">
+            <ul className="feature-list mt-9 grid gap-4">
               {included.map((item) => (
                 <li key={item} className="flex items-start gap-4 border-b border-border/70 pb-4">
                   <Check className="mt-1 size-4 shrink-0 text-secondary" aria-hidden />
@@ -104,13 +105,23 @@ export default function MobileCocktailBarPage() {
         </div>
       </section>
 
+      <ParallaxDivider
+        image="/comic/duane-retro-07.png"
+        alt="Duane achter een mobiele cocktailbar in vintage comicstijl"
+        eyebrow="Barservice als onderdeel van de avond"
+        title="Aanwezig waar het telt. Rustig op de momenten dat de gasten centraal staan."
+        imagePosition="center"
+        size="compact"
+        align="right"
+      />
+
       <section className="soft-section border-y border-border/70 py-24 sm:py-32">
         <div className="section-shell grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="fade-up">
             <p className="eyebrow-copy text-secondary">Geschikt voor</p>
             <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl">Particulier en zakelijk.</h2>
           </div>
-          <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
+          <div className="motion-grid grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
             {occasions.map((occasion) => (
               <div key={occasion} className="fade-up bg-card p-7 sm:p-9">
                 <Sparkles className="size-5 text-secondary" aria-hidden />
