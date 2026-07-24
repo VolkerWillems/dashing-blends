@@ -9,9 +9,9 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Cocktailworkshops op locatie in Venlo",
+  title: "Cocktail workshop op locatie",
   description:
-    "Cocktailworkshops op locatie voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen in Venlo en omgeving.",
+    "Interactieve cocktailworkshops voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen in Venlo en omgeving.",
   alternates: {
     canonical: "/cocktailworkshops",
   },
@@ -22,21 +22,21 @@ const suitableFor = [
   "Vrijgezellenfeesten",
   "Verjaardagen en privéfeesten",
   "Vriendengroepen",
-  "Groepen die alcoholvrije cocktails willen opnemen",
+  "Groepen die cocktails en mocktails willen combineren",
 ];
 
 const workshopFlow = [
   {
-    title: "Ontvangst en uitleg",
-    body: "Duane introduceert de materialen, basistechnieken en smaken waarmee de groep aan de slag gaat.",
+    title: "Kennismaken",
+    body: "De groep maakt kennis met de materialen, smaken en basistechnieken van een professionele bartender.",
   },
   {
-    title: "Zelf shaken en bouwen",
-    body: "De deelnemers maken de cocktails zelf. Er is ruimte voor vragen, proeven en persoonlijke begeleiding.",
+    title: "Zelf aan de slag",
+    body: "Iedere deelnemer gaat shaken, bouwen en garneren onder persoonlijke begeleiding van Duane.",
   },
   {
     title: "Samen proeven",
-    body: "De gemaakte cocktails worden gezamenlijk geproefd. De workshop blijft ontspannen, praktisch en toegankelijk.",
+    body: "De zelfgemaakte cocktails en mocktails worden geproefd in een ontspannen en sociale setting.",
   },
 ];
 
@@ -45,11 +45,11 @@ export default function CocktailWorkshopsPage() {
     <main id="main-content" className="overflow-hidden">
       <SiteHeader />
       <PageHero
-        eyebrow="Cocktailworkshops op locatie"
-        title="Zelf shaken, proeven en beleven."
-        introduction="Dashing Blends verzorgt interactieve cocktailworkshops voor groepen. Geen lange demonstratie, maar zelf aan de slag met professionele materialen, technieken en begeleiding van Duane."
+        eyebrow="Cocktail Workshop"
+        title="Ontdek samen de wereld van cocktails."
+        introduction="Een interactieve workshop waarin je technieken van een professionele bartender leert en geniet van cocktails die je zelf hebt gemaakt. Geschikt voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen."
         image="/comic/duane-team-04.png"
-        imageAlt="Duane begeleidt een groep tijdens een cocktailworkshop in vintage comicstijl"
+        imageAlt="Dashing Blends begeleidt een interactieve cocktailworkshop"
         imagePosition="object-center"
       />
 
@@ -58,10 +58,10 @@ export default function CocktailWorkshopsPage() {
           <div className="fade-up">
             <div className="flex items-center gap-4">
               <span className="section-rule h-px w-12 bg-secondary/70" />
-              <span className="eyebrow-copy text-secondary">Wat je kunt verwachten</span>
+              <span className="eyebrow-copy text-secondary">Interactief en persoonlijk</span>
             </div>
             <h2 className="display-copy mt-7 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
-              Een workshop waarin iedereen echt meedoet.
+              Geen demonstratie aan de zijlijn, maar zelf maken en beleven.
             </h2>
           </div>
 
@@ -70,14 +70,14 @@ export default function CocktailWorkshopsPage() {
               <GlassWater className="text-secondary" aria-hidden />
               <h3 className="display-copy mt-8 text-4xl">Cocktails en mocktails</h3>
               <p className="mt-5 text-base leading-8 text-muted-foreground">
-                De workshop kan bestaan uit cocktails, alcoholvrije varianten of een combinatie. De invulling wordt vooraf afgestemd op de groep en gelegenheid.
+                De invulling kan bestaan uit alcoholische cocktails, alcoholvrije varianten of een combinatie. Smaken en recepten worden vooraf afgestemd op de groep.
               </p>
             </div>
             <div className="subtle-panel motion-surface border border-border p-7 sm:p-9">
               <UsersRound className="text-secondary" aria-hidden />
-              <h3 className="display-copy mt-8 text-4xl">Persoonlijke begeleiding</h3>
+              <h3 className="display-copy mt-8 text-4xl">Professionele begeleiding</h3>
               <p className="mt-5 text-base leading-8 text-muted-foreground">
-                Duane legt de technieken helder uit en begeleidt de deelnemers tijdens het maken. Ervaring achter de bar is niet nodig.
+                Duane legt technieken en materialen toegankelijk uit en begeleidt iedereen tijdens het maken. Ervaring is niet nodig.
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function CocktailWorkshopsPage() {
           <div className="image-frame motion-media fade-up min-h-[640px]">
             <Image
               src="/comic/duane-shake-01.png"
-              alt="Duane demonstreert cocktailtechnieken tijdens een workshop in vintage comicstijl"
+              alt="Cocktailtechnieken tijdens een workshop van Dashing Blends"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[50%_28%]"
@@ -99,9 +99,11 @@ export default function CocktailWorkshopsPage() {
 
           <div className="fade-up lg:pl-10">
             <p className="eyebrow-copy text-secondary">Voor welke gelegenheden</p>
-            <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl">Geschikt voor een ontspannen groepsactiviteit.</h2>
+            <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl">
+              Een sociale activiteit die wordt afgestemd op jouw groep.
+            </h2>
             <p className="mt-7 text-base leading-8 text-muted-foreground sm:text-lg">
-              De workshop wordt op locatie verzorgd en kan worden afgestemd op de samenstelling van de groep, de beschikbare tijd en de gewenste sfeer.
+              De workshop wordt op locatie verzorgd en aangepast aan de groepsgrootte, beschikbare tijd, gewenste sfeer en praktische mogelijkheden.
             </p>
             <ul className="feature-list mt-9 grid gap-4">
               {suitableFor.map((item) => (
@@ -117,9 +119,9 @@ export default function CocktailWorkshopsPage() {
 
       <ParallaxDivider
         image="/comic/duane-mixing-09.png"
-        alt="Duane mixt cocktails tijdens een workshop in vintage comicstijl"
-        eyebrow="Maken, proeven, lachen"
-        title="De groep doet mee. Duane bewaakt tempo, techniek en sfeer."
+        alt="Cocktails maken tijdens een workshop van Dashing Blends"
+        eyebrow="Leren, shaken en genieten"
+        title="Een professionele cocktailworkshop met ruimte voor techniek, plezier en persoonlijke aandacht."
         imagePosition="center"
         size="compact"
       />
@@ -128,7 +130,9 @@ export default function CocktailWorkshopsPage() {
         <div className="section-shell">
           <div className="fade-up max-w-4xl">
             <p className="eyebrow-copy text-secondary">Opbouw van de workshop</p>
-            <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">Duidelijk opgebouwd, zonder schoolbankgevoel.</h2>
+            <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
+              Duidelijk opgebouwd en volledig gericht op samen doen.
+            </h2>
           </div>
           <div className="motion-grid mt-14 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
             {workshopFlow.map((step, index) => (
@@ -144,8 +148,8 @@ export default function CocktailWorkshopsPage() {
       </section>
 
       <ContactCta
-        title="Een cocktailworkshop plannen voor jouw groep?"
-        body="Stuur de gewenste datum, locatie, het aantal deelnemers en eventuele voorkeuren voor cocktails of mocktails mee."
+        title="Een cocktailworkshop organiseren?"
+        body="Stuur de gewenste datum, locatie, het aantal deelnemers en eventuele voorkeuren voor cocktails of mocktails. Dashing Blends denkt mee over een passende invulling."
         image="/comic/duane-shake-06.png"
       />
       <SiteFooter />
