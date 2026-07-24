@@ -7,7 +7,6 @@ import { ParallaxDivider } from "@/components/parallax-divider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
-import { contentImage } from "@/lib/content-images";
 
 const services = [
   {
@@ -17,7 +16,7 @@ const services = [
     description:
       "Interactieve workshops op locatie voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen.",
     href: "/cocktailworkshops",
-    image: contentImage(1, "/hero/mixing-02.png"),
+    image: "/comic/duane-shake-06.png",
     icon: GlassWater,
     points: ["Cocktails en mocktails", "Professionele materialen", "Persoonlijke begeleiding"],
   },
@@ -28,7 +27,7 @@ const services = [
     description:
       "Een bartender, cocktailmaterialen en desgewenst een mobiele bar voor bruiloften, bedrijfsfeesten en evenementen.",
     href: "/mobiele-cocktailbar",
-    image: contentImage(2, "/hero/shakers-01.png"),
+    image: "/comic/duane-cocktail-05.png",
     icon: PartyPopper,
     points: ["Cocktailkaart op maat", "Volledige barservice", "Verzorgde presentatie"],
   },
@@ -39,7 +38,7 @@ const services = [
     description:
       "Ervaren ondersteuning achter de bar, in de bediening en tijdens piekmomenten voor horeca- en eventteams.",
     href: "/horeca-support",
-    image: contentImage(3, "/hero/mix-01.png"),
+    image: "/comic/duane-team-04.png",
     icon: Handshake,
     points: ["Bar en bediening", "Praktisch inzetbaar", "Professioneel gastcontact"],
   },
@@ -55,7 +54,7 @@ const process = [
 export default function Home() {
   const heroImage = "/comic/duane-shake-01.png";
   const editorialImage = "/comic/duane-work-02.png";
-  const ctaImage = contentImage(5, "/hero/cocktails-02.png");
+  const ctaImage = "/comic/duane-shots-03.png";
 
   return (
     <main className="overflow-hidden">
@@ -145,7 +144,7 @@ export default function Home() {
                 <div className="relative aspect-[16/11] overflow-hidden border-b-[4px] border-[var(--ink)]">
                   <Image
                     src={service.image}
-                    alt={`${service.title} door Dashing Blends`}
+                    alt={`${service.title} door Dashing Blends in vintage comicstijl`}
                     fill
                     sizes="(min-width: 1280px) 28vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover object-center transition duration-500 hover:scale-[1.025]"
