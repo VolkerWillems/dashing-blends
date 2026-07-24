@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31_536_000,
+    minimumCacheTTL: 86_400,
   },
   async headers() {
     return [
@@ -47,7 +47,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
           },
         ],
       },
