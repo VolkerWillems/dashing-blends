@@ -125,7 +125,7 @@ export default function RootLayout({
   return (
     <html lang="nl" className="dark">
       <body className={`${displayFont.variable} ${bodyFont.variable}`}>
-        <a className="skip-link" href="#main-content">
+        <a className="skip-link" href="#page-content">
           Direct naar de inhoud
         </a>
         <SiteMotion />
