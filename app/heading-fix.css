@@ -1,4 +1,4 @@
-/* Keep display typography readable on narrow screens and never split headings mid-word. */
+/* Keep display typography readable at every viewport and never split headings mid-word. */
 .display-copy,
 h1,
 h2,
@@ -9,58 +9,135 @@ h3 {
 }
 
 .display-copy {
-  text-wrap: pretty;
+  text-wrap: balance;
+}
+
+/* Desktop hierarchy: expressive without allowing headings to dominate entire screens. */
+.hero-copy > h1.display-copy {
+  max-width: 15ch;
+  font-size: clamp(3.2rem, 4.65vw, 5.65rem) !important;
+  line-height: 0.96;
+}
+
+.page-hero-copy > h1.display-copy {
+  max-width: 15ch;
+  font-size: clamp(3.1rem, 4.35vw, 5.25rem) !important;
+  line-height: 0.97;
+}
+
+main h2.display-copy {
+  max-width: 19ch;
+  font-size: clamp(2.55rem, 3.25vw, 4.15rem) !important;
+  line-height: 0.99;
+}
+
+main h3.display-copy {
+  max-width: 22ch;
+  font-size: clamp(2rem, 2.35vw, 3.05rem) !important;
+  line-height: 1.01;
+}
+
+.cta-copy h2.display-copy {
+  max-width: 18ch;
+  font-size: clamp(2.35rem, 2.65vw, 3.3rem) !important;
+  line-height: 1;
+}
+
+.parallax-divider-copy .display-copy {
+  max-width: 16ch;
+  font-size: clamp(2.7rem, 3.8vw, 4.5rem) !important;
+  line-height: 0.98;
+}
+
+/* Reduce oversized empty zones between desktop content chapters. */
+main > section.section-shell:not(.hero-layout):not(.page-hero-layout) {
+  padding-block: clamp(4.5rem, 6vw, 6.5rem) !important;
+}
+
+/* CTA artwork should be shown as artwork, not cropped into an accidental torso study. */
+.cta-media {
+  min-height: clamp(420px, 32vw, 560px) !important;
+  background: var(--ink);
+}
+
+.cta-media > img,
+.motion-ready .cta-card .cta-media > img,
+.motion-ready .cta-card.is-visible .cta-media > img,
+.cta-card:hover .cta-media > img {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: none !important;
+}
+
+@media (max-width: 1279px) {
+  .hero-copy > h1.display-copy,
+  .page-hero-copy > h1.display-copy {
+    font-size: clamp(3rem, 5.8vw, 4.8rem) !important;
+  }
+
+  main h2.display-copy {
+    font-size: clamp(2.4rem, 4.4vw, 3.75rem) !important;
+  }
 }
 
 @media (max-width: 767px) {
   .hero-copy > h1.display-copy,
   .page-hero-copy > h1.display-copy {
     max-width: 100%;
-    font-size: clamp(2.35rem, 10.5vw, 3.55rem) !important;
-    line-height: 0.98;
+    font-size: clamp(2.25rem, 9.8vw, 3.35rem) !important;
+    line-height: 0.99;
   }
 
   main h2.display-copy {
     max-width: 100%;
-    font-size: clamp(2rem, 9.2vw, 3.1rem) !important;
-    line-height: 1;
+    font-size: clamp(1.95rem, 8.5vw, 2.85rem) !important;
+    line-height: 1.01;
   }
 
   main h3.display-copy {
     max-width: 100%;
-    font-size: clamp(1.7rem, 7.6vw, 2.35rem) !important;
-    line-height: 1.02;
+    font-size: clamp(1.65rem, 7.2vw, 2.2rem) !important;
+    line-height: 1.03;
   }
 
   .parallax-divider-copy .display-copy {
     max-width: 13ch;
-    font-size: clamp(2rem, 9vw, 3rem) !important;
-    line-height: 1;
+    font-size: clamp(1.95rem, 8.5vw, 2.75rem) !important;
+    line-height: 1.01;
   }
 
-  .cta-copy .display-copy {
-    font-size: clamp(2rem, 9vw, 3rem) !important;
-    line-height: 1;
+  .cta-copy h2.display-copy {
+    max-width: 100%;
+    font-size: clamp(1.95rem, 8.3vw, 2.7rem) !important;
+    line-height: 1.02;
   }
 
   .hero-visual figcaption .display-copy,
   .page-hero-image figcaption .display-copy {
-    font-size: clamp(1.55rem, 7.8vw, 2.25rem) !important;
-    line-height: 1.02;
+    font-size: clamp(1.45rem, 7.2vw, 2.05rem) !important;
+    line-height: 1.03;
+  }
+
+  main > section.section-shell:not(.hero-layout):not(.page-hero-layout) {
+    padding-block: 4rem !important;
+  }
+
+  .cta-media {
+    min-height: clamp(360px, 105vw, 500px) !important;
   }
 }
 
 @media (max-width: 420px) {
   .hero-copy > h1.display-copy,
   .page-hero-copy > h1.display-copy {
-    font-size: clamp(2.15rem, 10.2vw, 3rem) !important;
+    font-size: clamp(2.05rem, 9.5vw, 2.8rem) !important;
   }
 
   main h2.display-copy {
-    font-size: clamp(1.85rem, 8.8vw, 2.7rem) !important;
+    font-size: clamp(1.8rem, 8.1vw, 2.45rem) !important;
   }
 
   main h3.display-copy {
-    font-size: clamp(1.55rem, 7.2vw, 2.05rem) !important;
+    font-size: clamp(1.5rem, 6.8vw, 1.95rem) !important;
   }
 }
