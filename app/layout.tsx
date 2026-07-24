@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
@@ -13,10 +12,37 @@ const displayFont = localFont({
   style: "normal",
 });
 
-const bodyFont = DM_Sans({
-  subsets: ["latin"],
+const bodyFont = localFont({
+  src: [
+    {
+      path: "../public/fonts/Noirden-Light.woff",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Noirden-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Noirden-RegularOblique.woff",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Noirden-SemiBold.woff",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Noirden-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  fallback: ["Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
