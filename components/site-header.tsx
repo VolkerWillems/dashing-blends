@@ -8,10 +8,10 @@ import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   { label: "Home", href: "/" },
-  { label: "Cocktailworkshops", href: "/cocktailworkshops" },
-  { label: "Mobiele cocktailbar", href: "/mobiele-cocktailbar" },
+  { label: "Over ons", href: "/over" },
+  { label: "Workshop", href: "/cocktailworkshops" },
+  { label: "Mobiele Cocktailbar", href: "/mobiele-cocktailbar" },
   { label: "Horeca support", href: "/horeca-support" },
-  { label: "Over", href: "/over" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -95,7 +95,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link href="/contact" className="header-cta hidden sm:inline-flex">
             <Mail className="size-4" aria-hidden />
-            Aanvraag
+            Contact opnemen
           </Link>
           <button
             ref={menuButtonRef}
@@ -141,7 +141,7 @@ export function SiteHeader() {
               info@dashingblends.nl
             </a>
             <Link href="/contact" className="header-cta justify-center" tabIndex={open ? 0 : -1}>
-              Bespreek je aanvraag
+              Plan je event
             </Link>
           </div>
         </div>
