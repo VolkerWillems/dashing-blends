@@ -21,8 +21,8 @@ export default function AboutPage() {
         eyebrow="Over Dashing Blends"
         title="Gastvrijheid met aandacht voor het moment."
         introduction="Dashing Blends is het bedrijf van Duane Chia. Vanuit Venlo verzorgt hij cocktailworkshops, mobiele barservice en horecaondersteuning voor particuliere en zakelijke opdrachtgevers."
-        image="/hero/cocktail-01.png"
-        imageAlt="Verzorgde cocktail in een stijlvolle donkere setting"
+        image="/comic/duane-team-04.png"
+        imageAlt="Duane van Dashing Blends werkt met gasten in vintage comicstijl"
         imagePosition="object-center"
       />
 
@@ -83,21 +83,21 @@ export default function AboutPage() {
           <div className="grid grid-cols-[0.72fr_1fr] gap-5">
             <div className="image-frame fade-up min-h-[520px] translate-y-10">
               <Image
-                src="/duane-02.webp"
-                alt="Duane tijdens een cocktailworkshop"
+                src="/comic/duane-shots-03.png"
+                alt="Duane serveert cocktails in vintage comicstijl"
                 fill
                 sizes="(min-width: 1024px) 32vw, 45vw"
-                className="object-cover object-[50%_20%]"
+                className="object-cover object-center"
               />
               <div className="editorial-overlay" />
             </div>
             <div className="image-frame fade-up min-h-[620px]">
               <Image
-                src="/duane-03.webp"
-                alt="Duane achter de bar"
+                src="/comic/duane-shake-01.png"
+                alt="Duane demonstreert cocktailtechniek in vintage comicstijl"
                 fill
                 sizes="(min-width: 1024px) 38vw, 55vw"
-                className="object-cover object-center"
+                className="object-cover object-[50%_28%]"
               />
               <div className="editorial-overlay" />
             </div>
@@ -115,7 +115,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ContactCta />
+      <ContactCta image="/comic/duane-work-02.png" />
       <SiteFooter />
     </main>
   );
