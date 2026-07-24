@@ -31,8 +31,8 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Bespreek jouw gelegenheid met Dashing Blends."
         introduction="Voor vragen en aanvragen kun je rechtstreeks mailen. Hoe concreter de informatie, hoe gerichter Duane de mogelijkheden kan beoordelen."
-        image="/hero/cocktails-02.png"
-        imageAlt="Selectie cocktails in een stijlvolle donkere barsetting"
+        image="/comic/duane-cocktail-05.png"
+        imageAlt="Duane presenteert een cocktail in vintage comicstijl"
         imagePosition="object-center"
       />
 
