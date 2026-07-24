@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import "./refinements.css";
+import "./parallax-fix.css";
 
 const displayFont = localFont({
   src: "../public/fonts/Shutdawn-Regular.woff2",
