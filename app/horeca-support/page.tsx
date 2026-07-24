@@ -29,8 +29,8 @@ export default function HospitalitySupportPage() {
         eyebrow="Horeca support"
         title="Ervaren versterking wanneer het telt."
         introduction="Dashing Blends ondersteunt horecabedrijven en eventteams met flexibele inzet achter de bar, in de bediening en tijdens drukke momenten. Professioneel, representatief en snel ingewerkt."
-        image="/hero/mix-01.png"
-        imageAlt="Cocktailbereiding en professioneel barwerk"
+        image="/comic/duane-work-02.png"
+        imageAlt="Duane werkt achter de bar in vintage comicstijl"
         imagePosition="object-center"
       />
 
@@ -76,8 +76,8 @@ export default function HospitalitySupportPage() {
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="image-frame fade-up min-h-[650px]">
             <Image
-              src="/duane-03.webp"
-              alt="Duane werkt achter een professionele bar"
+              src="/comic/duane-team-04.png"
+              alt="Duane werkt samen met een horecateam in vintage comicstijl"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-center"

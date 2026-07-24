@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
+import "./refinements.css";
 
 const displayFont = localFont({
   src: "../public/fonts/Shutdawn-Regular.woff2",

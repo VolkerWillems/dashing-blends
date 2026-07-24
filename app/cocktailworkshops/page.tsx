@@ -44,8 +44,8 @@ export default function CocktailWorkshopsPage() {
         eyebrow="Cocktailworkshops op locatie"
         title="Zelf shaken, proeven en beleven."
         introduction="Dashing Blends verzorgt interactieve cocktailworkshops voor groepen. Geen lange demonstratie, maar zelf aan de slag met professionele materialen, technieken en begeleiding van Duane."
-        image="/hero/mixing-02.png"
-        imageAlt="Cocktailshaker en glaswerk tijdens een workshop"
+        image="/comic/duane-team-04.png"
+        imageAlt="Duane begeleidt een groep tijdens een cocktailworkshop in vintage comicstijl"
         imagePosition="object-center"
       />
 
@@ -84,11 +84,11 @@ export default function CocktailWorkshopsPage() {
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="image-frame fade-up min-h-[640px]">
             <Image
-              src="/duane-01.webp"
-              alt="Cocktails bereiden tijdens een workshop"
+              src="/comic/duane-shake-01.png"
+              alt="Duane demonstreert cocktailtechnieken tijdens een workshop in vintage comicstijl"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-[68%_center]"
+              className="object-cover object-[50%_28%]"
             />
             <div className="editorial-overlay" />
           </div>

@@ -7,7 +7,7 @@ import { ParallaxDivider } from "@/components/parallax-divider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
-import { comicImage, contentImage } from "@/lib/content-images";
+import { contentImage } from "@/lib/content-images";
 
 const services = [
   {
@@ -17,7 +17,7 @@ const services = [
     description:
       "Interactieve workshops op locatie voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen.",
     href: "/cocktailworkshops",
-    image: comicImage(2, contentImage(1, "/hero/mixing-02.png")),
+    image: contentImage(1, "/hero/mixing-02.png"),
     icon: GlassWater,
     points: ["Cocktails en mocktails", "Professionele materialen", "Persoonlijke begeleiding"],
   },
@@ -28,7 +28,7 @@ const services = [
     description:
       "Een bartender, cocktailmaterialen en desgewenst een mobiele bar voor bruiloften, bedrijfsfeesten en evenementen.",
     href: "/mobiele-cocktailbar",
-    image: comicImage(3, contentImage(2, "/hero/shakers-01.png")),
+    image: contentImage(2, "/hero/shakers-01.png"),
     icon: PartyPopper,
     points: ["Cocktailkaart op maat", "Volledige barservice", "Verzorgde presentatie"],
   },
@@ -39,7 +39,7 @@ const services = [
     description:
       "Ervaren ondersteuning achter de bar, in de bediening en tijdens piekmomenten voor horeca- en eventteams.",
     href: "/horeca-support",
-    image: comicImage(4, contentImage(3, "/hero/mix-01.png")),
+    image: contentImage(3, "/hero/mix-01.png"),
     icon: Handshake,
     points: ["Bar en bediening", "Praktisch inzetbaar", "Professioneel gastcontact"],
   },
@@ -53,11 +53,9 @@ const process = [
 ];
 
 export default function Home() {
-  const heroImage = comicImage(0, "/comic/duane-shake-01.png");
-  const editorialImage = comicImage(1, "/comic/duane-work-02.png");
-  const ctaImage = comicImage(5, contentImage(5, "/hero/cocktails-02.png"));
-  const firstDivider = comicImage(6, "/parallax/parallax-01.jpg");
-  const secondDivider = comicImage(7, "/parallax/parallax-02.jpg");
+  const heroImage = "/comic/duane-shake-01.png";
+  const editorialImage = "/comic/duane-work-02.png";
+  const ctaImage = contentImage(5, "/hero/cocktails-02.png");
 
   return (
     <main className="overflow-hidden">
@@ -183,7 +181,7 @@ export default function Home() {
       </section>
 
       <ParallaxDivider
-        image={firstDivider}
+        image="/parallax/parallax-01.jpg"
         alt="Cocktailbar in een sfeervolle setting"
         eyebrow="Op locatie"
         title="Een verzorgde barervaring begint ruim voordat het eerste glas wordt geserveerd."
@@ -244,7 +242,7 @@ export default function Home() {
       </section>
 
       <ParallaxDivider
-        image={secondDivider}
+        image="/parallax/parallax-02.jpg"
         alt="Cocktailglazen in een avondsetting"
         eyebrow="Dashing Blends"
         title="De uitstraling ondersteunt de gelegenheid, zonder de avond over te nemen."

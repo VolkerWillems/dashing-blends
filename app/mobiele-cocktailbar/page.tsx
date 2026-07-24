@@ -37,8 +37,8 @@ export default function MobileCocktailBarPage() {
         eyebrow="Mobiele cocktailbar"
         title="Een professionele barervaring op jouw locatie."
         introduction="Dashing Blends verzorgt cocktails en gastvrijheid op locatie. Van bartender en materialen tot een complete mobiele bar, afgestemd op het type evenement en de gasten."
-        image="/hero/shakers-01.png"
-        imageAlt="Cocktailshakers en barbenodigdheden in een donkere barsetting"
+        image="/comic/duane-shots-03.png"
+        imageAlt="Duane serveert cocktails op locatie in vintage comicstijl"
         imagePosition="object-center"
       />
 
@@ -80,11 +80,11 @@ export default function MobileCocktailBarPage() {
         <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div className="image-frame fade-up min-h-[660px]">
             <Image
-              src="/duane-01.webp"
-              alt="Dashing Blends verzorgt cocktails op locatie"
+              src="/comic/duane-work-02.png"
+              alt="Duane verzorgt professionele barservice in vintage comicstijl"
               fill
               sizes="(min-width: 1024px) 52vw, 100vw"
-              className="object-cover object-[67%_center]"
+              className="object-cover object-center"
             />
             <div className="editorial-overlay" />
           </div>

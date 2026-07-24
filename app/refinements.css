@@ -1,0 +1,144 @@
+/* Final polish layer for a cleaner, more editorial comic direction. */
+
+body {
+  background:
+    radial-gradient(circle at 18% 8%, oklch(0.42 0.14 344 / 0.08), transparent 32rem),
+    linear-gradient(145deg, oklch(0.075 0.02 326), oklch(0.105 0.027 324) 54%, oklch(0.07 0.018 326));
+}
+
+body::before {
+  opacity: 0.13;
+}
+
+body::after {
+  opacity: 0.055;
+}
+
+.display-copy {
+  line-height: 0.96;
+  letter-spacing: 0.012em;
+  text-shadow: 1px 1px 0 var(--ink);
+}
+
+main > .section-shell:first-of-type > div:first-child > .display-copy {
+  font-size: clamp(2.9rem, 5.55vw, 6.55rem) !important;
+}
+
+.eyebrow-copy {
+  background: oklch(0.73 0.105 83);
+  box-shadow: 2px 2px 0 var(--ink);
+  transform: none;
+}
+
+.site-header {
+  box-shadow: 0 5px 0 oklch(0 0 0 / 0.16);
+}
+
+.site-header::after,
+.site-footer::before {
+  background: var(--magenta-dark);
+  opacity: 0.72;
+}
+
+.mobile-nav::before {
+  opacity: 0.11;
+}
+
+.soft-section,
+.process-section {
+  background:
+    radial-gradient(circle, oklch(0.94 0.03 88 / 0.04) 0 1px, transparent 1.2px),
+    linear-gradient(145deg, oklch(0.125 0.03 326), oklch(0.09 0.023 326));
+  background-size: 9px 9px, 100% 100%;
+}
+
+.subtle-panel,
+.cta-card,
+.service-card {
+  border-width: 3px !important;
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.hero-visual,
+.page-hero-image,
+.image-frame,
+.cta-media {
+  border-width: 4px;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.hero-visual::after,
+.page-hero-image::after,
+.image-frame::after,
+.cta-media::after {
+  opacity: 0.17;
+  background-size: 7px 7px;
+}
+
+.hero-visual figcaption,
+.page-hero-image figcaption {
+  box-shadow: 3px 3px 0 var(--ink) !important;
+}
+
+.hero-visual > div:first-of-type,
+.page-hero-image > div:first-of-type {
+  box-shadow: 3px 3px 0 var(--ink) !important;
+}
+
+.service-card:nth-child(2),
+.service-card:nth-child(3) {
+  transform: none;
+}
+
+.service-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+.parallax-divider {
+  border-block-width: 4px;
+  box-shadow: inset 0 0 0 8px oklch(0.09 0.025 325 / 0.24);
+}
+
+.parallax-divider::before {
+  background:
+    linear-gradient(90deg, oklch(0.05 0.01 326 / 0.8), oklch(0.05 0.01 326 / 0.2) 58%, oklch(0.05 0.01 326 / 0.6)),
+    radial-gradient(circle, var(--ink) 0 0.75px, transparent 1px),
+    linear-gradient(180deg, var(--background), transparent 20%, transparent 76%, var(--background));
+  background-size: 100% 100%, 8px 8px, 100% 100%;
+}
+
+.parallax-divider::after {
+  border-width: 3px;
+  box-shadow: inset 0 0 0 1px oklch(0.78 0.13 83 / 0.42);
+}
+
+.parallax-divider-copy .display-copy {
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.site-footer {
+  background:
+    radial-gradient(circle, oklch(0.78 0.1 83 / 0.045) 0 1px, transparent 1.2px),
+    linear-gradient(150deg, oklch(0.115 0.03 326), oklch(0.07 0.018 326));
+  background-size: 9px 9px, 100% 100%;
+}
+
+@media (max-width: 640px) {
+  main > .section-shell:first-of-type > div:first-child > .display-copy {
+    font-size: clamp(2.65rem, 13.5vw, 4.35rem) !important;
+  }
+
+  .hero-visual,
+  .page-hero-image,
+  .image-frame,
+  .cta-media {
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+
+  .subtle-panel,
+  .cta-card,
+  .service-card {
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+}
