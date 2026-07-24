@@ -9,9 +9,12 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Horeca support | Dashing Blends",
+  title: "Horeca support en flexibele versterking in Venlo",
   description:
     "Flexibele horecaondersteuning voor bars, bediening, evenementen en piekmomenten in Venlo en omgeving.",
+  alternates: {
+    canonical: "/horeca-support",
+  },
 };
 
 const supportOptions = [
@@ -24,7 +27,7 @@ const supportOptions = [
 
 export default function HospitalitySupportPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <SiteHeader />
       <PageHero
         eyebrow="Horeca support"
@@ -47,7 +50,7 @@ export default function HospitalitySupportPage() {
             </h2>
           </div>
 
-          <div className="fade-up grid gap-6 sm:grid-cols-3">
+          <div className="motion-grid grid gap-6 sm:grid-cols-3">
             <div className="subtle-panel motion-surface border border-border p-7">
               <Handshake className="text-secondary" aria-hidden />
               <h3 className="display-copy mt-8 text-3xl">Snel aansluiten</h3>
@@ -134,6 +137,7 @@ export default function HospitalitySupportPage() {
       <ContactCta
         title="Extra horecaondersteuning nodig?"
         body="Stuur de datum, tijden, locatie en een korte omschrijving van de werkzaamheden. Dan kan Duane gericht reageren op de aanvraag."
+        image="/comic/duane-barwork-08.png"
       />
       <SiteFooter />
     </main>
