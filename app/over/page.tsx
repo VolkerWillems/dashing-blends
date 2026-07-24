@@ -4,6 +4,7 @@ import { BriefcaseBusiness, GlassWater, HeartHandshake } from "lucide-react";
 
 import { ContactCta } from "@/components/contact-cta";
 import { PageHero } from "@/components/page-hero";
+import { ParallaxDivider } from "@/components/parallax-divider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -30,7 +31,7 @@ export default function AboutPage() {
         <div className="section-shell grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div className="fade-up">
             <div className="flex items-center gap-4">
-              <span className="h-px w-12 bg-secondary/70" />
+              <span className="section-rule h-px w-12 bg-secondary/70" />
               <span className="eyebrow-copy text-secondary">Duane Chia</span>
             </div>
             <h2 className="display-copy mt-7 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
@@ -53,22 +54,22 @@ export default function AboutPage() {
       </section>
 
       <section className="section-shell py-24 sm:py-32">
-        <div className="grid gap-6 md:grid-cols-3">
-          <article className="subtle-panel fade-up border border-border p-8 sm:p-10">
+        <div className="motion-grid grid gap-6 md:grid-cols-3">
+          <article className="subtle-panel motion-surface fade-up border border-border p-8 sm:p-10">
             <GlassWater className="text-secondary" aria-hidden />
             <h3 className="display-copy mt-9 text-4xl">Vakmanschap</h3>
             <p className="mt-5 leading-8 text-muted-foreground">
               Kennis van cocktails, materialen en bartechnieken, helder uitgelegd of professioneel uitgevoerd.
             </p>
           </article>
-          <article className="subtle-panel fade-up border border-border p-8 sm:p-10">
+          <article className="subtle-panel motion-surface fade-up border border-border p-8 sm:p-10">
             <HeartHandshake className="text-secondary" aria-hidden />
             <h3 className="display-copy mt-9 text-4xl">Gastvrijheid</h3>
             <p className="mt-5 leading-8 text-muted-foreground">
               Aandacht voor gasten en een ontspannen benadering zonder in te leveren op professionaliteit.
             </p>
           </article>
-          <article className="subtle-panel fade-up border border-border p-8 sm:p-10">
+          <article className="subtle-panel motion-surface fade-up border border-border p-8 sm:p-10">
             <BriefcaseBusiness className="text-secondary" aria-hidden />
             <h3 className="display-copy mt-9 text-4xl">Duidelijkheid</h3>
             <p className="mt-5 leading-8 text-muted-foreground">
@@ -78,10 +79,20 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <ParallaxDivider
+        image="/parallax/parallax-03.jpg"
+        alt="Cocktailmoment in een sfeervolle avondsetting"
+        eyebrow="Meer dan een recept"
+        title="Timing, presentatie en persoonlijk contact maken het verschil aan de bar."
+        imagePosition="center"
+        size="compact"
+        align="right"
+      />
+
       <section className="soft-section border-y border-border/70 py-24 sm:py-32">
         <div className="section-shell grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div className="grid grid-cols-[0.72fr_1fr] gap-5">
-            <div className="image-frame fade-up min-h-[520px] translate-y-10">
+            <div className="image-frame motion-media fade-up min-h-[520px] translate-y-10">
               <Image
                 src="/comic/duane-shots-03.png"
                 alt="Duane serveert cocktails in vintage comicstijl"
@@ -91,7 +102,7 @@ export default function AboutPage() {
               />
               <div className="editorial-overlay" />
             </div>
-            <div className="image-frame fade-up min-h-[620px]">
+            <div className="image-frame motion-media fade-up min-h-[620px]">
               <Image
                 src="/comic/duane-shake-01.png"
                 alt="Duane demonstreert cocktailtechniek in vintage comicstijl"
