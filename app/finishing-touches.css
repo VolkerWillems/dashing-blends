@@ -6,6 +6,14 @@ main {
 
 .motion-ready .fade-up,
 .motion-ready .motion-grid > *,
+.motion-ready .section-rule,
+.motion-ready .cta-card,
+.motion-ready .cta-card::before {
+  animation: none !important;
+}
+
+.motion-ready .fade-up,
+.motion-ready .motion-grid > *,
 .motion-ready .cta-card {
   opacity: 0;
   transform: translateY(18px);
@@ -82,7 +90,8 @@ main {
   opacity: 0;
   transition:
     opacity 420ms ease 260ms,
-    transform 520ms cubic-bezier(0.22, 1, 0.36, 1) 260ms;
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1) 260ms,
+    box-shadow 180ms ease;
 }
 
 .cta-card.is-visible .cta-image-label {
