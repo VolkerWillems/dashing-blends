@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, GlassWater, Handshake, PartyPopper } from "lucide-react";
@@ -7,6 +8,15 @@ import { ParallaxDivider } from "@/components/parallax-divider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Cocktailworkshops, mobiele cocktailbar en horeca support",
+  description:
+    "Dashing Blends verzorgt cocktailworkshops, mobiele cocktailbar en flexibele horecaondersteuning op locatie in Venlo en omgeving.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const services = [
   {
@@ -57,14 +67,14 @@ export default function Home() {
   const ctaImage = "/comic/duane-shots-03.png";
 
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <SiteHeader />
 
-      <section className="section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-20">
-        <div className="fade-up flex flex-col gap-7 lg:pr-4">
+      <section className="hero-layout section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-18">
+        <div className="hero-copy fade-up flex flex-col gap-7 lg:pr-4">
           <p className="eyebrow-copy">Cocktails & hospitality · Venlo</p>
 
-          <h1 className="display-copy max-w-4xl text-[clamp(3.2rem,6.3vw,7.4rem)] text-foreground">
+          <h1 className="display-copy max-w-4xl text-[clamp(2.9rem,5.55vw,6.55rem)] text-foreground">
             Cocktails met karakter. Service met aandacht.
           </h1>
 
@@ -72,7 +82,7 @@ export default function Home() {
             Dashing Blends verzorgt cocktailworkshops, een mobiele cocktailbar en flexibele horecaondersteuning voor particuliere en zakelijke gelegenheden in Venlo en omgeving.
           </p>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="hero-actions flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
               <Link href="/contact">
                 Bespreek je aanvraag
@@ -84,7 +94,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <dl className="grid grid-cols-3 border-[3px] border-[var(--ink)] bg-card shadow-[6px_6px_0_var(--ink)]">
+          <dl className="hero-facts grid grid-cols-3 border-[3px] border-[var(--ink)] bg-card shadow-[6px_6px_0_var(--ink)]">
             {[
               ["Basis", "Venlo"],
               ["Werkgebied", "Op locatie"],
@@ -100,13 +110,13 @@ export default function Home() {
           </dl>
         </div>
 
-        <figure className="hero-visual fade-up min-h-[540px] sm:min-h-[680px] lg:min-h-[78dvh]">
+        <figure className="hero-visual fade-up min-h-[540px] sm:min-h-[680px] lg:min-h-[76dvh]">
           <Image
             src={heroImage}
             alt="Duane van Dashing Blends tijdens een cocktailworkshop in vintage comicstijl"
             fill
             priority
-            sizes="(min-width: 1024px) 54vw, 100vw"
+            sizes="(min-width: 1024px) 53vw, 100vw"
             className="object-cover object-[50%_28%]"
           />
 
@@ -136,7 +146,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:mt-16 xl:grid-cols-3">
+        <div className="motion-grid mt-12 grid gap-8 lg:mt-16 xl:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
@@ -160,7 +170,7 @@ export default function Home() {
                   <p className="eyebrow-copy">{service.eyebrow}</p>
                   <h3 className="display-copy mt-5 text-3xl sm:text-4xl">{service.title}</h3>
                   <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">{service.description}</p>
-                  <ul className="mt-6 grid gap-3 border-t-[3px] border-[var(--ink)] pt-6">
+                  <ul className="feature-list mt-6 grid gap-3 border-t-[3px] border-[var(--ink)] pt-6">
                     {service.points.map((point) => (
                       <li key={point} className="flex items-center gap-3 text-sm font-semibold">
                         <Check className="size-4 shrink-0 text-secondary" aria-hidden />
@@ -180,8 +190,8 @@ export default function Home() {
       </section>
 
       <ParallaxDivider
-        image="/parallax/parallax-01.jpg"
-        alt="Cocktailbar in een sfeervolle setting"
+        image="/comic/duane-retro-07.png"
+        alt="Duane achter een mobiele cocktailbar in vintage comicstijl"
         eyebrow="Op locatie"
         title="Een verzorgde barervaring begint ruim voordat het eerste glas wordt geserveerd."
         imagePosition="center"
@@ -226,7 +236,7 @@ export default function Home() {
           <h2 className="display-copy mt-6 max-w-4xl text-4xl sm:text-6xl xl:text-7xl">
             Duidelijk van aanvraag tot uitvoering.
           </h2>
-          <div className="mt-12 grid border-l-[4px] border-t-[4px] border-[var(--ink)] bg-card shadow-[9px_9px_0_var(--ink)] sm:grid-cols-2 xl:grid-cols-4">
+          <div className="motion-grid mt-12 grid border-l-[4px] border-t-[4px] border-[var(--ink)] bg-card shadow-[9px_9px_0_var(--ink)] sm:grid-cols-2 xl:grid-cols-4">
             {process.map(([number, title, body]) => (
               <article key={number} className="border-b-[4px] border-r-[4px] border-[var(--ink)] p-6 sm:p-8 lg:p-9">
                 <p className="inline-flex border-[3px] border-[var(--ink)] bg-primary px-2.5 py-1 text-xs font-black tracking-[0.14em] text-primary-foreground shadow-[3px_3px_0_var(--ink)]">
@@ -241,11 +251,12 @@ export default function Home() {
       </section>
 
       <ParallaxDivider
-        image="/parallax/parallax-02.jpg"
-        alt="Cocktailglazen in een avondsetting"
+        image="/comic/duane-mixing-09.png"
+        alt="Duane mixt cocktails in vintage comicstijl"
         eyebrow="Dashing Blends"
         title="De uitstraling ondersteunt de gelegenheid, zonder de avond over te nemen."
         imagePosition="center"
+        align="right"
       />
 
       <ContactCta image={ctaImage} />
