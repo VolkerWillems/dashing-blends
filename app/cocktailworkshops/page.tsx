@@ -9,9 +9,12 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Cocktailworkshops | Dashing Blends",
+  title: "Cocktailworkshops op locatie in Venlo",
   description:
     "Cocktailworkshops op locatie voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen in Venlo en omgeving.",
+  alternates: {
+    canonical: "/cocktailworkshops",
+  },
 };
 
 const suitableFor = [
@@ -39,7 +42,7 @@ const workshopFlow = [
 
 export default function CocktailWorkshopsPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <SiteHeader />
       <PageHero
         eyebrow="Cocktailworkshops op locatie"
@@ -62,7 +65,7 @@ export default function CocktailWorkshopsPage() {
             </h2>
           </div>
 
-          <div className="fade-up grid gap-6 sm:grid-cols-2">
+          <div className="motion-grid grid gap-6 sm:grid-cols-2">
             <div className="subtle-panel motion-surface border border-border p-7 sm:p-9">
               <GlassWater className="text-secondary" aria-hidden />
               <h3 className="display-copy mt-8 text-4xl">Cocktails en mocktails</h3>
@@ -143,6 +146,7 @@ export default function CocktailWorkshopsPage() {
       <ContactCta
         title="Een cocktailworkshop plannen voor jouw groep?"
         body="Stuur de gewenste datum, locatie, het aantal deelnemers en eventuele voorkeuren voor cocktails of mocktails mee."
+        image="/comic/duane-shake-06.png"
       />
       <SiteFooter />
     </main>
