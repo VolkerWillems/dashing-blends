@@ -9,9 +9,9 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Over Duane en Dashing Blends",
+  title: "Over Dashing Blends en Duane Chia",
   description:
-    "Maak kennis met Duane en Dashing Blends: cocktails, gastvrijheid en professionele horecaondersteuning vanuit Venlo.",
+    "Maak kennis met Duane Chia en Dashing Blends: cocktails, gastvrijheid, mobiele barservice en horeca support vanuit Venlo.",
   alternates: {
     canonical: "/over",
   },
@@ -22,11 +22,11 @@ export default function AboutPage() {
     <main id="main-content" className="overflow-hidden">
       <SiteHeader />
       <PageHero
-        eyebrow="Over Dashing Blends"
-        title="Gastvrijheid met aandacht voor het moment."
-        introduction="Dashing Blends is het bedrijf van Duane Chia. Vanuit Venlo verzorgt hij cocktailworkshops, mobiele barservice en horecaondersteuning voor particuliere en zakelijke opdrachtgevers."
+        eyebrow="Over ons"
+        title="Van liefde voor cocktails en gastvrijheid naar een professioneel hospitalitybedrijf."
+        introduction="Dashing Blends is het bedrijf van Duane Chia. Vanuit Venlo helpt hij bedrijven en particulieren met cocktailworkshops, mobiele cocktailservice en professionele horecaondersteuning."
         image="/comic/duane-team-04.png"
-        imageAlt="Duane van Dashing Blends werkt met gasten in vintage comicstijl"
+        imageAlt="Duane Chia van Dashing Blends tijdens een hospitalityopdracht"
         imagePosition="object-center"
       />
 
@@ -38,19 +38,19 @@ export default function AboutPage() {
               <span className="eyebrow-copy text-secondary">Duane Chia</span>
             </div>
             <h2 className="display-copy mt-7 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
-              Ervaring in horeca, barservice en gastcontact.
+              Cocktails, hospitality en service als één complete ervaring.
             </h2>
           </div>
 
           <div className="fade-up max-w-3xl space-y-6 text-base leading-8 text-muted-foreground sm:text-lg">
             <p>
-              Duane heeft een achtergrond in horecaondernemerschap en hospitality. Die ervaring zie je terug in de manier waarop Dashing Blends werkt: praktisch, persoonlijk en met oog voor zowel de gast als de opdrachtgever.
+              Wat begon als een liefde voor cocktails en gastvrijheid groeide uit tot een bedrijf dat horecabedrijven, evenementorganisatoren en particuliere opdrachtgevers ondersteunt met professionele service.
             </p>
             <p>
-              Een goede cocktail is meer dan een recept. Timing, presentatie en contact aan de bar bepalen minstens zoveel van de ervaring. Daarom worden techniek en gastvrijheid altijd als één geheel benaderd.
+              Dashing Blends draait niet alleen om het maken van cocktails. De voorbereiding, presentatie, het contact met gasten en de flexibiliteit op locatie bepalen samen de kwaliteit van de ervaring.
             </p>
             <p>
-              Dashing Blends werkt op locatie en stemt iedere opdracht af op de gelegenheid, de groep en de beschikbare voorzieningen.
+              Iedere opdracht wordt persoonlijk afgestemd op de gelegenheid, de locatie, de gasten en de gewenste sfeer. Zo ontstaat geen standaardpakket, maar een passende invulling voor het moment.
             </p>
           </div>
         </div>
@@ -60,23 +60,23 @@ export default function AboutPage() {
         <div className="motion-grid grid gap-6 md:grid-cols-3">
           <article className="subtle-panel motion-surface fade-up border border-border p-8 sm:p-10">
             <GlassWater className="text-secondary" aria-hidden />
-            <h3 className="display-copy mt-9 text-4xl">Vakmanschap</h3>
+            <h3 className="display-copy mt-9 text-4xl">Kwaliteit</h3>
             <p className="mt-5 leading-8 text-muted-foreground">
-              Kennis van cocktails, materialen en bartechnieken, helder uitgelegd of professioneel uitgevoerd.
+              Professionele cocktails, goede materialen en aandacht voor de uitvoering van begin tot eind.
             </p>
           </article>
           <article className="subtle-panel motion-surface fade-up border border-border p-8 sm:p-10">
             <HeartHandshake className="text-secondary" aria-hidden />
             <h3 className="display-copy mt-9 text-4xl">Gastvrijheid</h3>
             <p className="mt-5 leading-8 text-muted-foreground">
-              Aandacht voor gasten en een ontspannen benadering zonder in te leveren op professionaliteit.
+              Oprechte aandacht voor gasten en een ontspannen sfeer die past bij de gelegenheid.
             </p>
           </article>
           <article className="subtle-panel motion-surface fade-up border border-border p-8 sm:p-10">
             <BriefcaseBusiness className="text-secondary" aria-hidden />
-            <h3 className="display-copy mt-9 text-4xl">Duidelijkheid</h3>
+            <h3 className="display-copy mt-9 text-4xl">Maatwerk</h3>
             <p className="mt-5 leading-8 text-muted-foreground">
-              Concrete afspraken over invulling, planning en praktische zaken voordat de opdracht begint.
+              Flexibele dienstverlening voor particuliere en zakelijke opdrachtgevers, afgestemd op praktische wensen en budget.
             </p>
           </article>
         </div>
@@ -84,9 +84,9 @@ export default function AboutPage() {
 
       <ParallaxDivider
         image="/comic/duane-cocktail-05.png"
-        alt="Duane presenteert een cocktail in vintage comicstijl"
-        eyebrow="Meer dan een recept"
-        title="Timing, presentatie en persoonlijk contact maken het verschil aan de bar."
+        alt="Dashing Blends combineert cocktails en gastvrijheid"
+        eyebrow="Expect the Unexpected"
+        title="Een professionele uitstraling, ontspannen sfeer en een ervaring waar gasten over napraten."
         imagePosition="center"
         size="compact"
         align="right"
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <div className="image-frame motion-media fade-up min-h-[440px] sm:min-h-[520px] md:translate-y-10">
               <Image
                 src="/comic/duane-shots-03.png"
-                alt="Duane serveert cocktails in vintage comicstijl"
+                alt="Cocktailservice door Dashing Blends"
                 fill
                 sizes="(min-width: 1024px) 32vw, 45vw"
                 className="object-cover object-center"
@@ -108,7 +108,7 @@ export default function AboutPage() {
             <div className="image-frame motion-media fade-up min-h-[520px] sm:min-h-[620px]">
               <Image
                 src="/comic/duane-shake-01.png"
-                alt="Duane demonstreert cocktailtechniek in vintage comicstijl"
+                alt="Duane demonstreert cocktailtechnieken"
                 fill
                 sizes="(min-width: 1024px) 38vw, 55vw"
                 className="object-cover object-[50%_28%]"
@@ -118,18 +118,25 @@ export default function AboutPage() {
           </div>
 
           <div className="fade-up lg:pl-10">
-            <p className="eyebrow-copy text-secondary">Werkwijze</p>
+            <p className="eyebrow-copy text-secondary">Gevestigd in Venlo</p>
             <h2 className="display-copy mt-5 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
-              Persoonlijk contact, passend voorstel, goede uitvoering.
+              Lokaal gevestigd, flexibel inzetbaar.
             </h2>
             <p className="mt-7 text-base leading-8 text-muted-foreground sm:text-lg">
-              De voorbereiding begint met een duidelijke inventarisatie van datum, locatie, groep en verwachtingen. Vanuit daar wordt bepaald welke dienst en invulling passend zijn.
+              Dashing Blends is voornamelijk actief in Venlo en omgeving. Afhankelijk van de opdracht en planning zijn werkzaamheden ook buiten de regio mogelijk.
+            </p>
+            <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
+              De samenwerking begint met persoonlijk contact en een duidelijke inventarisatie. Daarna volgt een voorstel dat aansluit op de gelegenheid en de gewenste dienstverlening.
             </p>
           </div>
         </div>
       </section>
 
-      <ContactCta image="/comic/duane-work-02.png" />
+      <ContactCta
+        title="Benieuwd wat Dashing Blends voor jou kan betekenen?"
+        body="Neem contact op voor een cocktailworkshop, mobiele cocktailbar of professionele horecaondersteuning."
+        image="/comic/duane-work-02.png"
+      />
       <SiteFooter />
     </main>
   );
