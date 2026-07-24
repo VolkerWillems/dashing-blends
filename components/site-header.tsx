@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   { label: "Home", href: "/" },
@@ -18,16 +18,42 @@ const navigation = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const root = document.documentElement;
+    root.style.overflow = open ? "hidden" : "";
+
+    if (open) {
+      const frameId = window.requestAnimationFrame(() => {
+        mobileNavRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+      });
+
+      return () => {
+        window.cancelAnimationFrame(frameId);
+        root.style.overflow = "";
+      };
+    }
+
     return () => {
-      document.body.style.overflow = "";
+      root.style.overflow = "";
     };
+  }, [open]);
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || !open) return;
+      setOpen(false);
+      menuButtonRef.current?.focus();
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
   }, [open]);
 
   return (
@@ -58,6 +84,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={`nav-link ${active ? "nav-link-active" : ""}`}
+                aria-current={active ? "page" : undefined}
               >
                 {item.label}
               </Link>
@@ -71,6 +98,7 @@ export function SiteHeader() {
             Aanvraag
           </Link>
           <button
+            ref={menuButtonRef}
             type="button"
             className="menu-toggle xl:hidden"
             aria-expanded={open}
@@ -84,6 +112,7 @@ export function SiteHeader() {
       </div>
 
       <div
+        ref={mobileNavRef}
         id="mobile-navigation"
         className={`mobile-nav ${open ? "mobile-nav-open" : ""}`}
         aria-hidden={!open}
@@ -91,17 +120,21 @@ export function SiteHeader() {
         <div className="section-shell flex h-full flex-col py-8 sm:py-10">
           <p className="eyebrow-copy text-secondary">Navigatie</p>
           <nav className="mt-7 flex flex-col border-t border-border/70" aria-label="Mobiele navigatie">
-            {navigation.map((item, index) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="mobile-nav-link"
-                tabIndex={open ? 0 : -1}
-              >
-                <span className="text-xs text-secondary/80">0{index + 1}</span>
-                <span>{item.label}</span>
-              </Link>
-            ))}
+            {navigation.map((item, index) => {
+              const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="mobile-nav-link"
+                  tabIndex={open ? 0 : -1}
+                  aria-current={active ? "page" : undefined}
+                >
+                  <span className="text-xs text-secondary/80">0{index + 1}</span>
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
           </nav>
           <div className="mt-auto grid gap-3 pt-8 sm:grid-cols-2">
             <a href="mailto:info@dashingblends.nl" className="mobile-contact-link" tabIndex={open ? 0 : -1}>
