@@ -1,6 +1,6 @@
 /* Noirden reads best with a little more air and a slightly larger text scale. */
 body {
-  letter-spacing: 0.014em;
+  letter-spacing: 0.018em;
 }
 
 main p.text-muted-foreground:not(.eyebrow-copy):not([class*="uppercase"]),
@@ -9,21 +9,21 @@ main .footer-contact,
 main .footer-link {
   font-size: 1.125rem;
   line-height: 1.78;
-  letter-spacing: 0.024em;
+  letter-spacing: 0.032em;
 }
 
 main .service-card p.text-muted-foreground,
 main .subtle-panel p.text-muted-foreground,
 main .cta-copy > p.text-muted-foreground,
 main .page-hero-copy > p.text-muted-foreground {
-  letter-spacing: 0.026em;
+  letter-spacing: 0.036em;
 }
 
 .site-footer p:not(.eyebrow-copy):not([class*="uppercase"]),
 .site-footer .footer-link,
 .site-footer .footer-contact,
 .site-footer .social-link {
-  letter-spacing: 0.022em;
+  letter-spacing: 0.028em;
 }
 
 @media (min-width: 640px) {
@@ -38,7 +38,7 @@ main .page-hero-copy > p.text-muted-foreground {
   main .page-hero-copy > p.text-muted-foreground {
     font-size: 1.3125rem;
     line-height: 1.7;
-    letter-spacing: 0.028em;
+    letter-spacing: 0.042em;
   }
 }
 
@@ -47,6 +47,6 @@ main .page-hero-copy > p.text-muted-foreground {
   main .feature-list li {
     font-size: 1.0625rem;
     line-height: 1.72;
-    letter-spacing: 0.022em;
+    letter-spacing: 0.028em;
   }
 }
