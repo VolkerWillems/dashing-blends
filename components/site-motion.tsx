@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-const motionSelector = ".fade-up, .motion-grid > *, .section-rule, .cta-card";
+const motionSelector =
+  ".fade-up, .motion-grid > *, .section-rule, .cta-card, .parallax-divider-copy > *";
 
 export function SiteMotion() {
   const pathname = usePathname();
@@ -14,8 +15,11 @@ export function SiteMotion() {
     const elements = Array.from(document.querySelectorAll<HTMLElement>(motionSelector));
 
     elements.forEach((element) => {
-      if (element.parentElement?.classList.contains("motion-grid")) {
-        const siblings = Array.from(element.parentElement.children);
+      const motionGrid = element.parentElement?.classList.contains("motion-grid");
+      const parallaxCopy = element.parentElement?.classList.contains("parallax-divider-copy");
+
+      if (motionGrid || parallaxCopy) {
+        const siblings = Array.from(element.parentElement?.children ?? []);
         const index = siblings.indexOf(element);
         element.style.setProperty("--motion-delay", `${Math.min(index, 5) * 70}ms`);
       }
@@ -35,8 +39,8 @@ export function SiteMotion() {
         });
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -7% 0px",
+        threshold: 0.1,
+        rootMargin: "0px 0px -6% 0px",
       },
     );
 
