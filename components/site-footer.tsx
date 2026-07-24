@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 
 const services = [
-  { label: "Cocktailworkshops", href: "/cocktailworkshops" },
-  { label: "Mobiele cocktailbar", href: "/mobiele-cocktailbar" },
-  { label: "Horeca support", href: "/horeca-support" },
+  { label: "Cocktail Workshop", href: "/cocktailworkshops" },
+  { label: "Mobiele Cocktailbar", href: "/mobiele-cocktailbar" },
+  { label: "Horeca Support", href: "/horeca-support" },
 ];
 
 const company = [
   { label: "Home", href: "/" },
-  { label: "Over Dashing Blends", href: "/over" },
+  { label: "Over ons", href: "/over" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -45,23 +45,41 @@ export function SiteFooter() {
               </div>
             </Link>
             <p className="mt-7 max-w-lg text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
-              Cocktailworkshops, mobiele barservice en professionele horecaondersteuning op locatie vanuit Venlo en Tegelen.
+              Wat begon als een liefde voor cocktails en gastvrijheid groeide uit tot professionele service voor horecabedrijven, evenementen en particuliere opdrachtgevers.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href="https://www.facebook.com/profile.php?id=61585571172645"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+                aria-label="Dashing Blends op Facebook"
+              >
+                <Facebook className="size-4" aria-hidden />
+                Facebook
+                <ArrowUpRight className="size-3.5" aria-hidden />
+              </a>
+              <a
+                href="https://www.instagram.com/dashing.blends/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+                aria-label="Dashing Blends op Instagram"
+              >
+                <Instagram className="size-4" aria-hidden />
+                Instagram
+                <ArrowUpRight className="size-3.5" aria-hidden />
+              </a>
               <a
                 href="https://nl.linkedin.com/in/duane-chia-27945b62"
                 target="_blank"
                 rel="noreferrer"
                 className="social-link"
-                aria-label="Dashing Blends op LinkedIn"
+                aria-label="Duane Chia op LinkedIn"
               >
                 <Linkedin className="size-4" aria-hidden />
                 LinkedIn
                 <ArrowUpRight className="size-3.5" aria-hidden />
-              </a>
-              <a href="mailto:info@dashingblends.nl" className="social-link" aria-label="E-mail Dashing Blends">
-                <Mail className="size-4" aria-hidden />
-                E-mail
               </a>
             </div>
           </div>
@@ -72,16 +90,18 @@ export function SiteFooter() {
           <div>
             <p className="eyebrow-copy text-secondary">Contact</p>
             <div className="mt-5 flex flex-col gap-4 text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Dashing Blends</p>
+              <p>Duane Chia</p>
               <a href="mailto:info@dashingblends.nl" className="footer-contact">
                 <Mail className="mt-0.5 size-4 shrink-0 text-secondary" aria-hidden />
                 <span>info@dashingblends.nl</span>
               </a>
               <div className="footer-contact">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-secondary" aria-hidden />
-                <span>Venlo, Tegelen en omgeving</span>
+                <span>Venlo en omgeving</span>
               </div>
               <Link href="/contact" className="footer-link mt-2 text-foreground">
-                Aanvraag versturen
+                Contact opnemen
               </Link>
             </div>
           </div>
@@ -89,7 +109,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-4 pt-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Dashing Blends. Alle rechten voorbehouden.</p>
-          <p className="uppercase tracking-[0.14em]">Venlo · Tegelen · Op locatie</p>
+          <p className="uppercase tracking-[0.14em]">Venlo · Op locatie · Flexibel inzetbaar</p>
         </div>
       </div>
     </footer>
