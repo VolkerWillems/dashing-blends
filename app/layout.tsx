@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import { SiteMotion } from "@/components/site-motion";
+
 import "./globals.css";
 import "./refinements.css";
 import "./parallax-fix.css";
+import "./finishing-touches.css";
 
 const displayFont = localFont({
   src: "../public/fonts/Shutdawn-Regular.woff2",
@@ -70,7 +73,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl" className="dark">
-      <body className={`${displayFont.variable} ${bodyFont.variable}`}>{children}</body>
+      <body className={`${displayFont.variable} ${bodyFont.variable}`}>
+        <SiteMotion />
+        {children}
+      </body>
     </html>
   );
 }
