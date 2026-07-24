@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import { SiteMotion } from "@/components/site-motion";
 import { StructuredData } from "@/components/structured-data";
+import { ThemeRuntime } from "@/components/theme-runtime";
 
 import "./globals.css";
 import "./refinements.css";
@@ -11,6 +12,7 @@ import "./finishing-touches.css";
 import "./site-finish.css";
 import "./typography-tuning.css";
 import "./heading-fix.css";
+import "./theme-overrides.css";
 
 const displayFont = localFont({
   src: "../public/fonts/Shutdawn-Regular.woff2",
@@ -130,6 +132,7 @@ export default function RootLayout({
         <a className="skip-link" href="#page-content">
           Direct naar de inhoud
         </a>
+        <ThemeRuntime />
         <SiteMotion />
         <StructuredData />
         {children}
