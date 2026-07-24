@@ -1,0 +1,431 @@
+.style-editor-shell {
+  width: min(calc(100% - 32px), 1480px);
+  margin-inline: auto;
+  padding: 3rem 0 5rem;
+}
+
+.style-editor-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+}
+
+.style-editor-header > div {
+  max-width: 850px;
+}
+
+.style-editor-kicker,
+.style-preview-label {
+  margin: 0 0 0.75rem;
+  color: var(--secondary);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.style-editor-header h1 {
+  margin: 0;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(2.75rem, 6vw, 5.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.style-editor-header p:not(.style-editor-kicker) {
+  max-width: 760px;
+  margin: 1.25rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.style-editor-link,
+.editor-actions button,
+.preset-grid button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 2px solid var(--ink);
+  background: var(--secondary);
+  padding: 0.8rem 1rem;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.style-editor-link svg,
+.editor-actions button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.style-editor-link:hover,
+.editor-actions button:hover,
+.preset-grid button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.style-editor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.68fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.style-editor-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.editor-panel,
+.style-preview-sticky {
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 94%, black);
+}
+
+.editor-panel {
+  padding: 1.4rem;
+}
+
+.editor-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.editor-panel-heading > svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.2rem;
+  color: var(--secondary);
+}
+
+.editor-panel h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.editor-panel p,
+.editor-field small,
+.color-field small,
+.editor-range small {
+  color: var(--muted-foreground);
+}
+
+.editor-panel-heading p {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.preset-grid button {
+  min-height: 52px;
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: none;
+}
+
+.color-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.color-field,
+.editor-field,
+.editor-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.color-field:nth-child(-n + 2) {
+  border-top: 0;
+}
+
+.color-field > span:first-child,
+.editor-field > span,
+.editor-range > span {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.color-field strong,
+.editor-field strong,
+.editor-range strong {
+  font-size: 0.92rem;
+}
+
+.color-field small,
+.editor-field small,
+.editor-range small {
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.color-input-wrap {
+  display: grid;
+  justify-items: end;
+  gap: 0.35rem;
+}
+
+.color-input-wrap input[type="color"] {
+  width: 58px;
+  height: 42px;
+  border: 2px solid var(--ink);
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.color-input-wrap code {
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+}
+
+.editor-field select {
+  width: min(230px, 45%);
+  min-height: 44px;
+  border: 1px solid var(--border);
+  background: var(--input);
+  padding: 0 0.8rem;
+  color: var(--foreground);
+  font: inherit;
+}
+
+.editor-range {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
+}
+
+.editor-range input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding-top: 0.5rem;
+}
+
+.editor-actions button {
+  background: var(--card);
+  color: var(--foreground);
+}
+
+.editor-actions .editor-primary-action {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.editor-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  border-left: 3px solid var(--secondary);
+  padding: 0.8rem 1rem;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.editor-status svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--secondary);
+}
+
+.editor-export {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 1rem;
+}
+
+.editor-export summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.editor-export textarea {
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  padding: 1rem;
+  color: var(--muted-foreground);
+  font: 0.78rem/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+  resize: vertical;
+}
+
+.style-preview-sticky {
+  position: sticky;
+  top: 1.5rem;
+  padding: 1.4rem;
+}
+
+.preview-card {
+  border: 3px solid var(--ink);
+  background: var(--card);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.preview-card h2.display-copy {
+  max-width: 12ch;
+  margin: 1.4rem 0 0;
+  font-size: clamp(2.25rem, 4vw, 4.25rem) !important;
+  line-height: 0.98;
+}
+
+.preview-card > p {
+  max-width: 60ch;
+  margin: 1.5rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: var(--db-body-tracking);
+}
+
+.preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.preview-actions span {
+  border: 2px solid var(--ink);
+  background: var(--primary);
+  padding: 0.75rem 0.9rem;
+  color: var(--primary-foreground);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.preview-actions span:last-child {
+  background: var(--secondary);
+  color: var(--ink);
+}
+
+.preview-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.preview-swatches div {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.preview-swatches span {
+  min-height: 52px;
+  border: 2px solid var(--ink);
+}
+
+.preview-swatches small {
+  color: var(--muted-foreground);
+  font-size: 0.68rem;
+}
+
+.preview-note {
+  margin: 1.25rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1050px) {
+  .style-editor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .style-preview-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .style-editor-shell {
+    width: min(calc(100% - 24px), 680px);
+    padding-top: 1.5rem;
+  }
+
+  .style-editor-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .style-editor-link {
+    width: 100%;
+  }
+
+  .preset-grid,
+  .color-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .color-field:nth-child(2) {
+    border-top: 1px solid var(--border);
+  }
+
+  .color-field,
+  .editor-field,
+  .editor-range {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .editor-field select {
+    width: 100%;
+  }
+
+  .editor-range {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-actions {
+    display: grid;
+  }
+
+  .editor-actions button {
+    width: 100%;
+  }
+}
