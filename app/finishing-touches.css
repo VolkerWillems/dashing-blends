@@ -1,0 +1,203 @@
+/* Final interaction layer. Deliberately restrained to keep the comic style editorial. */
+
+main {
+  animation: page-settle 440ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-ready .fade-up,
+.motion-ready .motion-grid > *,
+.motion-ready .cta-card {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.motion-ready .fade-up.is-visible,
+.motion-ready .motion-grid > *.is-visible,
+.motion-ready .cta-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay, 0ms),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay, 0ms),
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.motion-ready .section-rule {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.motion-ready .section-rule.is-visible {
+  transform: scaleX(1);
+  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+}
+
+.cta-card {
+  isolation: isolate;
+}
+
+.cta-card::before {
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta-card.is-visible::before {
+  transform: scaleX(1);
+}
+
+.cta-copy {
+  position: relative;
+}
+
+.cta-copy::after {
+  position: absolute;
+  right: 2rem;
+  bottom: 1.65rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  pointer-events: none;
+  content: "";
+  opacity: 0.09;
+  background: radial-gradient(circle, var(--mustard) 0 1px, transparent 1.2px);
+  background-size: 7px 7px;
+  transform: rotate(8deg);
+}
+
+.cta-image-label {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  border: 3px solid var(--ink);
+  background: var(--mustard);
+  padding: 0.6rem 0.8rem;
+  color: var(--ink);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: translateY(8px);
+  opacity: 0;
+  transition:
+    opacity 420ms ease 260ms,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1) 260ms;
+}
+
+.cta-card.is-visible .cta-image-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-ready .cta-card .cta-media > img {
+  transform: scale(1.075);
+}
+
+.motion-ready .cta-card.is-visible .cta-media > img {
+  transform: scale(1.02);
+  transition:
+    transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 500ms ease;
+}
+
+[data-icon="inline-end"],
+.card-link svg,
+.header-cta svg {
+  transition: transform 180ms ease;
+}
+
+:is(a, button):hover [data-icon="inline-end"],
+.card-link:hover svg,
+.header-cta:hover svg {
+  transform: translateX(4px);
+}
+
+:is(.hero-visual, .page-hero-image, .image-frame, .cta-media) figcaption {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+:is(.hero-visual, .page-hero-image, .image-frame, .cta-media):hover figcaption {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--ink) !important;
+}
+
+.subtle-panel::after,
+.service-card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  pointer-events: none;
+  content: "";
+  opacity: 0;
+  background: linear-gradient(135deg, transparent 48%, var(--mustard) 49% 54%, transparent 55%);
+  transition: opacity 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .subtle-panel:hover::after,
+  .service-card:hover::after {
+    opacity: 0.72;
+  }
+
+  .cta-card:hover .cta-image-label {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+
+  .social-link:hover svg,
+  .footer-contact:hover svg {
+    transform: translateY(-1px) rotate(-4deg);
+  }
+}
+
+.social-link svg,
+.footer-contact svg {
+  transition: transform 180ms ease;
+}
+
+@keyframes page-settle {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-copy::after {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .cta-image-label {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    font-size: 0.58rem;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main,
+  .motion-ready .fade-up,
+  .motion-ready .motion-grid > *,
+  .motion-ready .cta-card,
+  .motion-ready .section-rule,
+  .cta-image-label,
+  .motion-ready .cta-card .cta-media > img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
