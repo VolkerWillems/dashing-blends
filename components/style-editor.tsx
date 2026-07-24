@@ -12,17 +12,35 @@ import {
 } from "@/lib/theme-client";
 import { defaultThemeSettings, type ThemeSettings } from "@/lib/theme-settings";
 
+const speakeasyTheme: ThemeSettings = {
+  designDirection: "speakeasy",
+  background: "#0d0b09",
+  surface: "#1d1813",
+  primary: "#741d2a",
+  secondary: "#c7a15a",
+  foreground: "#f0dfb9",
+  mutedForeground: "#b9a98a",
+  bodyLetterSpacing: 0.024,
+  headingScale: "compact",
+  sectionSpacing: "balanced",
+  motionLevel: "subtle",
+  textureLevel: "subtle",
+  ctaImageFit: "contain",
+};
+
 const presets: Record<string, ThemeSettings> = {
   current: defaultThemeSettings,
+  speakeasy: speakeasyTheme,
   calm: {
-    ...defaultThemeSettings,
+    ...speakeasyTheme,
     headingScale: "compact",
     sectionSpacing: "compact",
-    motionLevel: "subtle",
-    textureLevel: "subtle",
+    motionLevel: "off",
+    textureLevel: "off",
   },
   comic: {
     ...defaultThemeSettings,
+    designDirection: "comic",
     headingScale: "large",
     sectionSpacing: "spacious",
     motionLevel: "normal",
@@ -39,8 +57,8 @@ const colorFields: Array<{
 }> = [
   { key: "background", label: "Achtergrond", help: "De algemene donkere achtergrondkleur." },
   { key: "surface", label: "Panelen", help: "Kleur van kaarten, blokken en formulieren." },
-  { key: "primary", label: "Magenta accent", help: "Buttons, actieve accenten en belangrijke acties." },
-  { key: "secondary", label: "Goud accent", help: "Labels, lijnen en ondersteunende accenten." },
+  { key: "primary", label: "Primaire accentkleur", help: "Buttons, actieve accenten en belangrijke acties." },
+  { key: "secondary", label: "Goud of tweede accent", help: "Labels, lijnen en ondersteunende accenten." },
   { key: "foreground", label: "Hoofdtekst", help: "Koppen en lichte tekst." },
   { key: "mutedForeground", label: "Lopende tekst", help: "Bodytekst en rustigere informatie." },
 ];
@@ -93,6 +111,8 @@ export function StyleEditor() {
     }
   }
 
+  const isSpeakeasy = settings.designDirection === "speakeasy";
+
   return (
     <main id="page-content" className="style-editor-shell">
       <header className="style-editor-header">
@@ -100,7 +120,7 @@ export function StyleEditor() {
           <p className="style-editor-kicker">Dashing Blends</p>
           <h1>Website style editor</h1>
           <p>
-            Pas kleur, typografie, ruimte en beweging aan. De preview verandert direct, zodat niemand op basis van zes losse WhatsApp-berichten hoeft te raden wat “iets rustiger” betekent.
+            Pas de volledige designrichting, kleuren, typografie, ruimte en beweging aan. De preview verandert direct, zodat “meer speakeasy” eindelijk iets concreters betekent dan een vaag handgebaar richting een donkere hoek.
           </p>
         </div>
         <Link href="/" className="style-editor-link" target="_blank">
@@ -116,14 +136,37 @@ export function StyleEditor() {
               <SlidersHorizontal aria-hidden />
               <div>
                 <h2>Snelle stijlkeuze</h2>
-                <p>Begin met een preset en pas daarna details aan.</p>
+                <p>Begin met een complete richting en pas daarna details aan.</p>
               </div>
             </div>
             <div className="preset-grid">
-              <button type="button" onClick={() => applyPreset("current")}>Huidige stijl</button>
-              <button type="button" onClick={() => applyPreset("calm")}>Rustiger en strakker</button>
+              <button type="button" onClick={() => applyPreset("speakeasy")}>Speakeasy · jaren 50</button>
+              <button type="button" onClick={() => applyPreset("calm")}>Speakeasy · minimaler</button>
+              <button type="button" onClick={() => applyPreset("current")}>Huidige comicstijl</button>
               <button type="button" onClick={() => applyPreset("comic")}>Meer comic-impact</button>
             </div>
+          </section>
+
+          <section className="editor-panel">
+            <div className="editor-panel-heading">
+              <div>
+                <h2>Designrichting</h2>
+                <p>Dit wisselt niet alleen kleuren, maar ook vormen, schaduwen, beeldbehandeling en typografie.</p>
+              </div>
+            </div>
+            <label className="editor-field">
+              <span>
+                <strong>Visuele stijl</strong>
+                <small>Speakeasy gebruikt donkere luxe, messing, bordeaux en subtiele jaren-50-details.</small>
+              </span>
+              <select
+                value={settings.designDirection}
+                onChange={(event) => update("designDirection", event.target.value as ThemeSettings["designDirection"])}
+              >
+                <option value="speakeasy">Speakeasy · vintage jaren 50</option>
+                <option value="comic">Vintage comic</option>
+              </select>
+            </label>
           </section>
 
           <section className="editor-panel">
@@ -158,7 +201,7 @@ export function StyleEditor() {
             <div className="editor-panel-heading">
               <div>
                 <h2>Typografie en ruimte</h2>
-                <p>De veilige knoppen. Geen mogelijkheid om een heading per ongeluk 200 pixels groot te maken.</p>
+                <p>Veilige verhoudingen, zonder de terugkeer van headings die complete schermen gijzelen.</p>
               </div>
             </div>
 
@@ -212,7 +255,7 @@ export function StyleEditor() {
             <div className="editor-panel-heading">
               <div>
                 <h2>Effecten</h2>
-                <p>Genoeg beweging voor karakter, niet genoeg om een cocktailkaart zeeziek te maken.</p>
+                <p>Karakter zonder dat de website zich gedraagt als een flipperkast na drie espresso’s.</p>
               </div>
             </div>
 
@@ -233,8 +276,8 @@ export function StyleEditor() {
 
             <label className="editor-field">
               <span>
-                <strong>Comictextuur</strong>
-                <small>Halftone dots en printstructuur over de achtergrond.</small>
+                <strong>Print- en filmtextuur</strong>
+                <small>Comic-halftone of subtiele vintage filmstructuur, afhankelijk van de designrichting.</small>
               </span>
               <select
                 value={settings.textureLevel}
@@ -283,16 +326,20 @@ export function StyleEditor() {
 
           <details className="editor-export">
             <summary>Technische configuratie tonen</summary>
-            <textarea readOnly value={exportText} rows={16} aria-label="Technische stijlconfiguratie" />
+            <textarea readOnly value={exportText} rows={17} aria-label="Technische stijlconfiguratie" />
           </details>
         </form>
 
         <aside className="style-preview" aria-label="Live stijlpreview">
           <div className="style-preview-sticky">
-            <p className="style-preview-label">Live preview</p>
+            <p className="style-preview-label">Live preview · {isSpeakeasy ? "Speakeasy jaren 50" : "Vintage comic"}</p>
             <div className="preview-card">
-              <span className="eyebrow-copy">Cocktails & hospitality</span>
-              <h2 className="display-copy">Een sterke stijl zonder typografische ongelukken.</h2>
+              <span className="eyebrow-copy">{isSpeakeasy ? "Private bar · Venlo" : "Cocktails & hospitality"}</span>
+              <h2 className="display-copy">
+                {isSpeakeasy
+                  ? "Cocktails, gastvrijheid en de sfeer van een verborgen bar."
+                  : "Een sterke stijl zonder typografische ongelukken."}
+              </h2>
               <p>
                 Dashing Blends verzorgt cocktailworkshops, mobiele cocktailservice en professionele horecaondersteuning vanuit Venlo.
               </p>
