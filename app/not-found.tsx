@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <main id="main-content" className="overflow-hidden">
       <SiteHeader />
-      <section className="section-shell grid min-h-[68dvh] place-items-center py-20 sm:py-28">
+      <section id="page-content" className="section-shell grid min-h-[68dvh] place-items-center py-20 sm:py-28">
         <div className="subtle-panel motion-surface max-w-4xl p-8 text-center sm:p-14 lg:p-18">
           <div className="mx-auto flex size-16 items-center justify-center border-[3px] border-[var(--ink)] bg-secondary text-[var(--ink)] shadow-[5px_5px_0_var(--ink)]">
             <Martini className="size-7" aria-hidden />
