@@ -70,7 +70,7 @@ export default function Home() {
     <main id="main-content" className="overflow-hidden">
       <SiteHeader />
 
-      <section className="hero-layout section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-18">
+      <section id="page-content" className="hero-layout section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-18">
         <div className="hero-copy fade-up flex flex-col gap-7 lg:pr-4">
           <p className="eyebrow-copy">Cocktails & hospitality · Venlo</p>
 
