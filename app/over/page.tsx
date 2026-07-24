@@ -9,14 +9,17 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Over Dashing Blends",
+  title: "Over Duane en Dashing Blends",
   description:
     "Maak kennis met Duane en Dashing Blends: cocktails, gastvrijheid en professionele horecaondersteuning vanuit Venlo.",
+  alternates: {
+    canonical: "/over",
+  },
 };
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <SiteHeader />
       <PageHero
         eyebrow="Over Dashing Blends"
@@ -80,8 +83,8 @@ export default function AboutPage() {
       </section>
 
       <ParallaxDivider
-        image="/parallax/parallax-03.jpg"
-        alt="Cocktailmoment in een sfeervolle avondsetting"
+        image="/comic/duane-cocktail-05.png"
+        alt="Duane presenteert een cocktail in vintage comicstijl"
         eyebrow="Meer dan een recept"
         title="Timing, presentatie en persoonlijk contact maken het verschil aan de bar."
         imagePosition="center"
@@ -91,8 +94,8 @@ export default function AboutPage() {
 
       <section className="soft-section border-y border-border/70 py-24 sm:py-32">
         <div className="section-shell grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div className="grid grid-cols-[0.72fr_1fr] gap-5">
-            <div className="image-frame motion-media fade-up min-h-[520px] translate-y-10">
+          <div className="grid grid-cols-[0.72fr_1fr] gap-4 sm:gap-5">
+            <div className="image-frame motion-media fade-up min-h-[440px] sm:min-h-[520px] md:translate-y-10">
               <Image
                 src="/comic/duane-shots-03.png"
                 alt="Duane serveert cocktails in vintage comicstijl"
@@ -102,7 +105,7 @@ export default function AboutPage() {
               />
               <div className="editorial-overlay" />
             </div>
-            <div className="image-frame motion-media fade-up min-h-[620px]">
+            <div className="image-frame motion-media fade-up min-h-[520px] sm:min-h-[620px]">
               <Image
                 src="/comic/duane-shake-01.png"
                 alt="Duane demonstreert cocktailtechniek in vintage comicstijl"
