@@ -19,6 +19,7 @@ export function applyThemeSettings(settings: ThemeSettings) {
   root.style.setProperty("--paper-muted", normalized.mutedForeground);
   root.style.setProperty("--db-body-tracking", `${normalized.bodyLetterSpacing.toFixed(3)}em`);
 
+  root.dataset.dbDesign = normalized.designDirection;
   root.dataset.dbHeadingScale = normalized.headingScale;
   root.dataset.dbSectionSpacing = normalized.sectionSpacing;
   root.dataset.dbMotion = normalized.motionLevel;
