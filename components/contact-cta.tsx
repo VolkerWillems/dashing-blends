@@ -20,10 +20,10 @@ export function ContactCta({
 
   return (
     <section className="section-shell py-20 sm:py-24 lg:py-28">
-      <div className="cta-card grid overflow-hidden border border-border lg:grid-cols-[1.04fr_0.96fr]">
-        <div className="relative z-10 flex flex-col justify-center p-7 sm:p-10 lg:p-14 xl:p-16">
+      <div className="cta-card motion-surface grid overflow-hidden border border-border lg:grid-cols-[1.04fr_0.96fr]">
+        <div className="fade-up relative z-10 flex flex-col justify-center p-7 sm:p-10 lg:p-14 xl:p-16">
           <div className="flex items-center gap-4">
-            <span className="h-px w-10 bg-secondary/70 sm:w-12" />
+            <span className="section-rule h-px w-10 bg-secondary/70 sm:w-12" />
             <span className="eyebrow-copy text-secondary">{eyebrow}</span>
           </div>
           <h2 className="display-copy mt-6 max-w-4xl text-4xl leading-[0.98] sm:text-5xl xl:text-6xl">{title}</h2>
@@ -36,7 +36,7 @@ export function ContactCta({
           </Button>
         </div>
 
-        <div className="cta-media min-h-[320px] sm:min-h-[420px] lg:min-h-full">
+        <div className="cta-media motion-media min-h-[320px] sm:min-h-[420px] lg:min-h-full">
           <Image
             src={ctaImage}
             alt="Cocktails en barservice van Dashing Blends"
