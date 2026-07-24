@@ -40,7 +40,7 @@ export default function ContactPage() {
         <div className="section-shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div className="fade-up">
             <div className="flex items-center gap-4">
-              <span className="h-px w-12 bg-secondary/70" />
+              <span className="section-rule h-px w-12 bg-secondary/70" />
               <span className="eyebrow-copy text-secondary">Rechtstreeks contact</span>
             </div>
             <h2 className="display-copy mt-7 text-5xl leading-[0.92] sm:text-6xl xl:text-7xl">
@@ -48,7 +48,7 @@ export default function ContactPage() {
             </h2>
           </div>
 
-          <div className="subtle-panel fade-up border border-border p-8 sm:p-12 lg:p-14">
+          <div className="subtle-panel motion-surface fade-up border border-border p-8 sm:p-12 lg:p-14">
             <div className="grid gap-8">
               <a href="mailto:info@dashingblends.nl" className="group border-b border-border/70 pb-7">
                 <Mail className="size-5 text-secondary" aria-hidden />
@@ -82,7 +82,7 @@ export default function ContactPage() {
             </h2>
           </div>
 
-          <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
+          <div className="motion-grid grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
             {details.map((detail, index) => (
               <div key={detail} className="fade-up bg-card p-7 sm:p-9">
                 <p className="display-copy text-4xl text-primary/55">0{index + 1}</p>
