@@ -1,5 +1,6 @@
 export const THEME_STORAGE_KEY = "dashing-blends-style-settings";
 
+export type DesignDirection = "comic" | "speakeasy";
 export type HeadingScale = "compact" | "balanced" | "large";
 export type SectionSpacing = "compact" | "balanced" | "spacious";
 export type MotionLevel = "off" | "subtle" | "normal";
@@ -7,6 +8,7 @@ export type TextureLevel = "off" | "subtle" | "normal";
 export type CtaImageFit = "cover" | "contain";
 
 export type ThemeSettings = {
+  designDirection: DesignDirection;
   background: string;
   surface: string;
   primary: string;
@@ -22,6 +24,7 @@ export type ThemeSettings = {
 };
 
 export const defaultThemeSettings: ThemeSettings = {
+  designDirection: "comic",
   background: "#160d15",
   surface: "#24131f",
   primary: "#ca007d",
@@ -37,6 +40,7 @@ export const defaultThemeSettings: ThemeSettings = {
 };
 
 const allowedValues = {
+  designDirection: ["comic", "speakeasy"],
   headingScale: ["compact", "balanced", "large"],
   sectionSpacing: ["compact", "balanced", "spacious"],
   motionLevel: ["off", "subtle", "normal"],
@@ -59,6 +63,9 @@ export function normalizeThemeSettings(value: unknown): ThemeSettings {
   const spacing = Number(candidate.bodyLetterSpacing);
 
   return {
+    designDirection: isAllowed("designDirection", candidate.designDirection)
+      ? candidate.designDirection
+      : defaultThemeSettings.designDirection,
     background: isHexColor(candidate.background) ? candidate.background : defaultThemeSettings.background,
     surface: isHexColor(candidate.surface) ? candidate.surface : defaultThemeSettings.surface,
     primary: isHexColor(candidate.primary) ? candidate.primary : defaultThemeSettings.primary,
