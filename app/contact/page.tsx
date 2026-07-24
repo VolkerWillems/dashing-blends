@@ -8,9 +8,12 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Contact | Dashing Blends",
+  title: "Contact en aanvragen",
   description:
     "Neem contact op met Dashing Blends voor een cocktailworkshop, mobiele cocktailbar of horecaondersteuning in Venlo en omgeving.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 const details = [
@@ -24,7 +27,7 @@ const details = [
 
 export default function ContactPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <SiteHeader />
 
       <PageHero
@@ -63,7 +66,7 @@ export default function ContactPage() {
                 <p className="display-copy mt-2 text-3xl sm:text-4xl">Venlo, Tegelen en omgeving</p>
               </div>
             </div>
-            <Button asChild size="lg" className="mt-9 w-fit uppercase tracking-[0.1em]">
+            <Button asChild size="lg" className="contact-action mt-9 w-fit uppercase tracking-[0.1em]">
               <a href="mailto:info@dashingblends.nl?subject=Aanvraag%20Dashing%20Blends">
                 <Mail data-icon="inline-start" />
                 Stuur een aanvraag
