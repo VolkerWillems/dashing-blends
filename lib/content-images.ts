@@ -3,26 +3,38 @@ import path from "node:path";
 
 const supportedImage = /\.(avif|gif|jpe?g|png|webp)$/i;
 
-let cachedImages: string[] | undefined;
+const imageCache = new Map<string, string[]>();
 
-export function getContentImages(): string[] {
-  if (cachedImages) {
-    return cachedImages;
+function getImages(directoryName: string): string[] {
+  const cached = imageCache.get(directoryName);
+
+  if (cached) {
+    return cached;
   }
 
-  const contentDirectory = path.join(process.cwd(), "public", "content");
+  const directory = path.join(process.cwd(), "public", directoryName);
 
   try {
-    cachedImages = fs
-      .readdirSync(contentDirectory, { withFileTypes: true })
+    const images = fs
+      .readdirSync(directory, { withFileTypes: true })
       .filter((entry) => entry.isFile() && supportedImage.test(entry.name))
-      .map((entry) => `/content/${entry.name}`)
+      .map((entry) => `/${directoryName}/${entry.name}`)
       .sort((left, right) => left.localeCompare(right, "nl", { numeric: true }));
-  } catch {
-    cachedImages = [];
-  }
 
-  return cachedImages;
+    imageCache.set(directoryName, images);
+    return images;
+  } catch {
+    imageCache.set(directoryName, []);
+    return [];
+  }
+}
+
+export function getContentImages(): string[] {
+  return getImages("content");
+}
+
+export function getComicImages(): string[] {
+  return getImages("comic");
 }
 
 export function contentImage(index: number, fallback: string): string {
@@ -33,4 +45,8 @@ export function contentImage(index: number, fallback: string): string {
   }
 
   return images[index % images.length] ?? fallback;
+}
+
+export function comicImage(index: number, fallback: string): string {
+  return getComicImages()[index] ?? fallback;
 }
