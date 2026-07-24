@@ -124,7 +124,7 @@ export default function Home() {
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-muted-foreground sm:leading-8 lg:justify-self-end">
-            Iedere opdracht wordt afgestemd op de gelegenheid, locatie en groep. Geen standaardpakket dat overal overheen wordt gegooid, want daar wordt niemand vrolijk van.
+            Iedere opdracht wordt zorgvuldig afgestemd op de gelegenheid, locatie, groepsgrootte en gewenste sfeer.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export default function Home() {
                     sizes="(min-width: 1280px) 28vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover object-center transition duration-700 hover:scale-[1.025]"
                   />
-                  <div className="absolute bottom-5 left-5 z-10 flex size-11 items-center justify-center border border-secondary/30 bg-background/80 text-secondary backdrop-blur-sm">
+                  <div className="absolute bottom-5 left-5 z-10 flex size-11 items-center justify-center border border-secondary/30 bg-background/90 text-secondary">
                     <Icon className="size-5" aria-hidden />
                   </div>
                 </div>
