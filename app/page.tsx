@@ -7,36 +7,39 @@ import { ParallaxDivider } from "@/components/parallax-divider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
-import { contentImage } from "@/lib/content-images";
+import { comicImage, contentImage } from "@/lib/content-images";
 
 const services = [
   {
+    number: "01",
     title: "Cocktailworkshops",
     eyebrow: "Zelf shaken en proeven",
     description:
       "Interactieve workshops op locatie voor bedrijfsuitjes, vrijgezellenfeesten, verjaardagen en vriendengroepen.",
     href: "/cocktailworkshops",
-    image: contentImage(1, "/hero/mixing-02.png"),
+    image: comicImage(2, contentImage(1, "/hero/mixing-02.png")),
     icon: GlassWater,
     points: ["Cocktails en mocktails", "Professionele materialen", "Persoonlijke begeleiding"],
   },
   {
+    number: "02",
     title: "Mobiele cocktailbar",
     eyebrow: "Barservice op locatie",
     description:
       "Een bartender, cocktailmaterialen en desgewenst een mobiele bar voor bruiloften, bedrijfsfeesten en evenementen.",
     href: "/mobiele-cocktailbar",
-    image: contentImage(2, "/hero/shakers-01.png"),
+    image: comicImage(3, contentImage(2, "/hero/shakers-01.png")),
     icon: PartyPopper,
     points: ["Cocktailkaart op maat", "Volledige barservice", "Verzorgde presentatie"],
   },
   {
+    number: "03",
     title: "Horeca support",
     eyebrow: "Flexibele versterking",
     description:
       "Ervaren ondersteuning achter de bar, in de bediening en tijdens piekmomenten voor horeca- en eventteams.",
     href: "/horeca-support",
-    image: contentImage(3, "/hero/mix-01.png"),
+    image: comicImage(4, contentImage(3, "/hero/mix-01.png")),
     icon: Handshake,
     points: ["Bar en bediening", "Praktisch inzetbaar", "Professioneel gastcontact"],
   },
@@ -50,66 +53,74 @@ const process = [
 ];
 
 export default function Home() {
-  const heroImage = contentImage(0, "/hero/mixing-01.png");
-  const editorialImage = contentImage(4, "/duane-04.webp");
-  const ctaImage = contentImage(5, "/hero/cocktails-02.png");
+  const heroImage = comicImage(0, "/comic/duane-shake-01.png");
+  const editorialImage = comicImage(1, "/comic/duane-work-02.png");
+  const ctaImage = comicImage(5, contentImage(5, "/hero/cocktails-02.png"));
+  const firstDivider = comicImage(6, "/parallax/parallax-01.jpg");
+  const secondDivider = comicImage(7, "/parallax/parallax-02.jpg");
 
   return (
     <main className="overflow-hidden">
       <SiteHeader />
 
-      <section className="section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-20">
+      <section className="section-shell grid gap-10 py-10 sm:py-14 lg:min-h-[calc(100dvh-88px)] lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-14 lg:py-16 xl:gap-20">
         <div className="fade-up flex flex-col gap-7 lg:pr-4">
-          <div className="flex items-center gap-4">
-            <span className="h-px w-10 bg-secondary/70 sm:w-12" />
-            <span className="eyebrow-copy text-secondary">Cocktails & hospitality · Venlo</span>
-          </div>
-          <h1 className="display-copy max-w-4xl text-[clamp(3.5rem,7.2vw,8rem)] leading-[0.9] text-foreground">
+          <p className="eyebrow-copy">Cocktails & hospitality · Venlo</p>
+
+          <h1 className="display-copy max-w-4xl text-[clamp(3.6rem,7.5vw,8.7rem)] text-foreground">
             Cocktails met karakter. Service met aandacht.
           </h1>
+
           <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 xl:text-xl">
             Dashing Blends verzorgt cocktailworkshops, een mobiele cocktailbar en flexibele horecaondersteuning voor particuliere en zakelijke gelegenheden in Venlo en omgeving.
           </p>
+
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="uppercase tracking-[0.1em]">
+            <Button asChild size="lg">
               <Link href="/contact">
                 Bespreek je aanvraag
                 <ArrowRight data-icon="inline-end" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="uppercase tracking-[0.1em]">
+            <Button asChild variant="outline" size="lg">
               <Link href="#diensten">Bekijk de diensten</Link>
             </Button>
           </div>
-          <div className="grid grid-cols-3 gap-3 border-y border-border/70 py-5 sm:gap-6">
-            <div>
-              <p className="eyebrow-copy text-muted-foreground">Basis</p>
-              <p className="mt-2 text-sm font-semibold text-foreground sm:text-base">Venlo</p>
-            </div>
-            <div>
-              <p className="eyebrow-copy text-muted-foreground">Werkgebied</p>
-              <p className="mt-2 text-sm font-semibold text-foreground sm:text-base">Op locatie</p>
-            </div>
-            <div>
-              <p className="eyebrow-copy text-muted-foreground">Aanpak</p>
-              <p className="mt-2 text-sm font-semibold text-foreground sm:text-base">Persoonlijk</p>
-            </div>
-          </div>
+
+          <dl className="grid grid-cols-3 border-[3px] border-[var(--ink)] bg-card shadow-[6px_6px_0_var(--ink)]">
+            {[
+              ["Basis", "Venlo"],
+              ["Werkgebied", "Op locatie"],
+              ["Aanpak", "Persoonlijk"],
+            ].map(([label, value], index) => (
+              <div key={label} className={`p-4 sm:p-5 ${index > 0 ? "border-l-[3px] border-[var(--ink)]" : ""}`}>
+                <dt className="text-[0.58rem] font-black uppercase tracking-[0.14em] text-secondary sm:text-[0.65rem]">
+                  {label}
+                </dt>
+                <dd className="mt-2 text-xs font-bold text-foreground sm:text-base">{value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
-        <figure className="hero-visual fade-up min-h-[480px] sm:min-h-[620px] lg:min-h-[76dvh]">
+        <figure className="hero-visual fade-up min-h-[540px] sm:min-h-[680px] lg:min-h-[78dvh]">
           <Image
             src={heroImage}
-            alt="Cocktail in bereiding in een stijlvolle barsetting"
+            alt="Duane van Dashing Blends tijdens een cocktailworkshop in vintage comicstijl"
             fill
             priority
-            sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover object-center"
+            sizes="(min-width: 1024px) 54vw, 100vw"
+            className="object-cover object-[50%_28%]"
           />
-          <figcaption className="absolute inset-x-6 bottom-6 z-10 sm:inset-x-10 sm:bottom-10">
-            <p className="eyebrow-copy text-secondary">Dashing Blends</p>
-            <p className="display-copy mt-3 max-w-2xl text-3xl leading-[0.98] sm:text-5xl">
-              Een stijlvolle barervaring die past bij het moment.
+
+          <div className="absolute left-4 top-4 z-10 border-[3px] border-[var(--ink)] bg-secondary px-3 py-2 text-[0.65rem] font-black uppercase tracking-[0.14em] text-[var(--ink)] shadow-[4px_4px_0_var(--ink)] sm:left-7 sm:top-7">
+            Chapter 01 · The Shake
+          </div>
+
+          <figcaption className="absolute inset-x-5 bottom-5 z-10 border-[3px] border-[var(--ink)] bg-[var(--paper)] p-4 text-[var(--ink)] shadow-[5px_5px_0_var(--ink)] sm:inset-x-8 sm:bottom-8 sm:p-6">
+            <p className="text-[0.63rem] font-black uppercase tracking-[0.14em] text-[var(--magenta-dark)]">Dashing Blends</p>
+            <p className="display-copy mt-2 max-w-2xl text-3xl text-[var(--ink)] sm:text-5xl">
+              Een barervaring die bij het moment past.
             </p>
           </figcaption>
         </figure>
@@ -118,9 +129,9 @@ export default function Home() {
       <section id="diensten" className="section-shell py-20 sm:py-24 lg:py-28">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.62fr] lg:items-end">
           <div>
-            <p className="eyebrow-copy text-secondary">Diensten</p>
-            <h2 className="display-copy mt-5 max-w-5xl text-4xl leading-[0.98] sm:text-6xl xl:text-7xl">
-              Eén vertrouwd gezicht voor cocktails en hospitality.
+            <p className="eyebrow-copy">Diensten</p>
+            <h2 className="display-copy mt-6 max-w-5xl text-4xl sm:text-6xl xl:text-7xl">
+              Drie manieren om Dashing Blends in te zetten.
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-muted-foreground sm:leading-8 lg:justify-self-end">
@@ -128,30 +139,33 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:mt-16 xl:grid-cols-3">
+        <div className="mt-12 grid gap-8 lg:mt-16 xl:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <article key={service.title} className="service-card overflow-hidden border border-border bg-card/55">
-                <div className="relative aspect-[16/11] overflow-hidden">
+              <article key={service.title} className="service-card bg-card">
+                <div className="relative aspect-[16/11] overflow-hidden border-b-[4px] border-[var(--ink)]">
                   <Image
                     src={service.image}
                     alt={`${service.title} door Dashing Blends`}
                     fill
                     sizes="(min-width: 1280px) 28vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover object-center transition duration-700 hover:scale-[1.025]"
+                    className="object-cover object-center transition duration-500 hover:scale-[1.025]"
                   />
-                  <div className="absolute bottom-5 left-5 z-10 flex size-11 items-center justify-center border border-secondary/30 bg-background/90 text-secondary">
+                  <span className="absolute right-4 top-4 z-10 border-[3px] border-[var(--ink)] bg-primary px-3 py-2 text-xs font-black text-primary-foreground shadow-[4px_4px_0_var(--ink)]">
+                    {service.number}
+                  </span>
+                  <div className="absolute bottom-4 left-4 z-10 flex size-12 items-center justify-center border-[3px] border-[var(--ink)] bg-secondary text-[var(--ink)] shadow-[4px_4px_0_var(--ink)]">
                     <Icon className="size-5" aria-hidden />
                   </div>
                 </div>
                 <div className="p-7 sm:p-8">
-                  <p className="eyebrow-copy text-secondary">{service.eyebrow}</p>
-                  <h3 className="display-copy mt-4 text-3xl leading-none sm:text-4xl">{service.title}</h3>
+                  <p className="eyebrow-copy">{service.eyebrow}</p>
+                  <h3 className="display-copy mt-5 text-3xl sm:text-4xl">{service.title}</h3>
                   <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">{service.description}</p>
-                  <ul className="mt-6 grid gap-3 border-t border-border/70 pt-6">
+                  <ul className="mt-6 grid gap-3 border-t-[3px] border-[var(--ink)] pt-6">
                     {service.points.map((point) => (
-                      <li key={point} className="flex items-center gap-3 text-sm">
+                      <li key={point} className="flex items-center gap-3 text-sm font-semibold">
                         <Check className="size-4 shrink-0 text-secondary" aria-hidden />
                         {point}
                       </li>
@@ -169,29 +183,33 @@ export default function Home() {
       </section>
 
       <ParallaxDivider
-        image="/parallax/parallax-01.jpg"
-        alt="Donkere cocktailbar met sfeervolle verlichting"
+        image={firstDivider}
+        alt="Cocktailbar in een sfeervolle setting"
         eyebrow="Op locatie"
         title="Een verzorgde barervaring begint ruim voordat het eerste glas wordt geserveerd."
         imagePosition="center"
       />
 
-      <section className="section-shell grid gap-10 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:py-28">
-        <div className="image-frame min-h-[460px] sm:min-h-[620px]">
+      <section className="section-shell grid gap-12 py-20 sm:py-24 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16 lg:py-28">
+        <figure className="image-frame min-h-[560px] sm:min-h-[720px]">
           <Image
             src={editorialImage}
-            alt="Duane van Dashing Blends tijdens een opdracht"
+            alt="Duane van Dashing Blends aan het werk in vintage comicstijl"
             fill
-            sizes="(min-width: 1024px) 52vw, 100vw"
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover object-center"
           />
-        </div>
-        <div>
-          <p className="eyebrow-copy text-secondary">Over Duane</p>
-          <h2 className="display-copy mt-5 text-4xl leading-[0.98] sm:text-6xl xl:text-7xl">
+          <figcaption className="absolute bottom-5 left-5 z-10 max-w-[80%] border-[3px] border-[var(--ink)] bg-secondary px-4 py-3 text-sm font-black uppercase tracking-[0.08em] text-[var(--ink)] shadow-[4px_4px_0_var(--ink)] sm:bottom-8 sm:left-8">
+            Ervaring, voorbereiding en persoonlijk gastcontact.
+          </figcaption>
+        </figure>
+
+        <div className="fade-up">
+          <p className="eyebrow-copy">Over Duane</p>
+          <h2 className="display-copy mt-6 text-4xl sm:text-6xl xl:text-7xl">
             Vakmanschap achter de bar. Rust in de uitvoering.
           </h2>
-          <div className="mt-6 space-y-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+          <div className="mt-7 space-y-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             <p>
               Dashing Blends is het bedrijf van Duane Chia. Zijn ervaring in horecaondernemerschap en hospitality zie je terug in de voorbereiding, presentatie en omgang met gasten.
             </p>
@@ -199,22 +217,24 @@ export default function Home() {
               De aanpak is praktisch en persoonlijk: vooraf helder afstemmen, op locatie flexibel handelen en kwaliteit leveren zonder onnodige drukte eromheen.
             </p>
           </div>
-          <Button asChild variant="outline" size="lg" className="mt-8 uppercase tracking-[0.1em]">
+          <Button asChild variant="outline" size="lg" className="mt-8">
             <Link href="/over">Meer over Dashing Blends</Link>
           </Button>
         </div>
       </section>
 
-      <section className="process-section border-y border-border/70 py-20 sm:py-24 lg:py-28">
+      <section className="process-section border-y-[5px] border-[var(--ink)] py-20 sm:py-24 lg:py-28">
         <div className="section-shell">
-          <p className="eyebrow-copy text-secondary">Werkwijze</p>
-          <h2 className="display-copy mt-5 max-w-4xl text-4xl leading-[0.98] sm:text-6xl xl:text-7xl">
+          <p className="eyebrow-copy">Werkwijze</p>
+          <h2 className="display-copy mt-6 max-w-4xl text-4xl sm:text-6xl xl:text-7xl">
             Duidelijk van aanvraag tot uitvoering.
           </h2>
-          <div className="mt-12 grid border-l border-t border-border/70 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid border-l-[4px] border-t-[4px] border-[var(--ink)] bg-card shadow-[9px_9px_0_var(--ink)] sm:grid-cols-2 xl:grid-cols-4">
             {process.map(([number, title, body]) => (
-              <article key={number} className="border-b border-r border-border/70 p-6 sm:p-8 lg:p-9">
-                <p className="text-xs font-semibold tracking-[0.18em] text-secondary">{number}</p>
+              <article key={number} className="border-b-[4px] border-r-[4px] border-[var(--ink)] p-6 sm:p-8 lg:p-9">
+                <p className="inline-flex border-[3px] border-[var(--ink)] bg-primary px-2.5 py-1 text-xs font-black tracking-[0.14em] text-primary-foreground shadow-[3px_3px_0_var(--ink)]">
+                  {number}
+                </p>
                 <h3 className="display-copy mt-8 text-3xl sm:text-4xl">{title}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{body}</p>
               </article>
@@ -224,8 +244,8 @@ export default function Home() {
       </section>
 
       <ParallaxDivider
-        image="/parallax/parallax-02.jpg"
-        alt="Cocktailglazen in een warme avondsetting"
+        image={secondDivider}
+        alt="Cocktailglazen in een avondsetting"
         eyebrow="Dashing Blends"
         title="De uitstraling ondersteunt de gelegenheid, zonder de avond over te nemen."
         imagePosition="center"
