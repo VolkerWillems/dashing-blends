@@ -7,5 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: "https://dashing-blends.nl/sitemap.xml",
+    host: "https://dashing-blends.nl",
   };
 }
